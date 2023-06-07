@@ -1,11 +1,12 @@
 ---
 export interface Props {
   href: string;
-  text: string;
-  icon: string;
+  text?: string;
+  icon?: string;
 }
 
-const { href, text, icon} = Astro.props;
+const { href, text, icon } = Astro.props;
 ---
-
-<button class="btn" href={href} target="_blank">{icon && <span class={icon}></span>}{icon && ' '}{text}</button>
+<a href={href} target="_blank">
+<button class="btn shadow-sm" >{icon && <span class={icon}></span>}{icon && ' '}{text && text}</button>
+</a>
