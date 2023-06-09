@@ -4,6 +4,7 @@ import solidJs from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
 import alpinejs from "@astrojs/alpinejs";
+import markdoc from "@astrojs/markdoc";
 import compress from "astro-compress";
 
 // https://astro.build/config
@@ -16,6 +17,7 @@ export default defineConfig({
       cacheDir: "./.cache/image",
     }),
     alpinejs(),
+    markdoc(),
     compress(),
   ],
 });

@@ -8,5 +8,5 @@ export interface Props {
 const { href, text, icon } = Astro.props;
 ---
 <a href={href} target="_blank">
-<button class="btn shadow-sm" >{icon && <span class={icon}></span>}{icon && ' '}{text && text}</button>
+<button class="btn bg-base-300 shadow-sm" >{<slot/> && <slot/>}{<slot/> && ' '}{text && text}</button>
 </a>

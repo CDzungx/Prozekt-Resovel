@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon";
+import { Image } from "@astrojs/image/components";
+import { version } from "../../../package.json";
+
+---
+
+<footer
+  class="footer fixed inset-x-0 bottom-0 p-4 px-6 items-center bg-base-300 text-base-content"
+  style="row-gap: 0px;">
+  <div class="items-center grid-flow-col py-0">
+    <span class="prose">
+      <span><label class="indicator-item badge badge-secondary">v{version}</label> 2023 |</span>
+      <a
+        property="dct:title"
+        rel="cc:attributionURL"
+        href="https://github.com/CDzungx/Asolind-Prozekt">Asolind Prozekt</a
+      > by <a
+        rel="cc:attributionURL dct:creator"
+        property="cc:attributionName"
+        href="https://github.com/CDzungx/">CDzungx</a
+      > is licensed under
+    </span>
+    <a
+      href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+      target="_blank"
+      rel="license noopener noreferrer"
+    >
+      <div class="flex">
+        <Image
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+          format="svg"
+          alt="CC"
+          width={20}
+          height={20}
+        />
+        <Image
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+          format="svg"
+          alt="BY"
+          width={20}
+          height={20}
+        />
+        <Image
+          src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+          format="svg"
+          alt="NC"
+          width={20}
+          height={20}
+        />
+      </div>
+    </a>
+  </div>
+  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <div class="hidden lg:flex md:flex">
+      <a href="https://github.com/CDzungx/Asolind-Prozekt" target="_blank">
+        <div class="box-border h-8 w-8">
+          <Icon name="mdi:github" />
+        </div>
+      </a>
+      <div class="divider divider-horizontal mx-0"></div>
+      <a href="https://discordapp.com/users/1088612635219599460" target="_blank">
+        <div class="box-border h-8 w-8">
+          <Icon name="ic:outline-discord" />
+        </div>
+      </a>
+    </div>
+  </div>
+</footer>
