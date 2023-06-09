@@ -21,7 +21,7 @@
     "@types/alpinejs": "^3.7.1",
     "alpinejs": "^3.12.2",
     "animate.css": "^4.1.1",
-    "astro": "^2.6.1",
+    "astro": "^2.6.2",
     "astro-compress": "^1.1.47",
     "astro-icon": "^0.8.1",
     "nanostores": "^0.9.1",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "daisyui": "^3.0.20",
+    "daisyui": "^3.0.22",
     "svgo": "^2.8.0"
   }
 }
