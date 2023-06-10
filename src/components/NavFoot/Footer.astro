@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon";
 import { Image } from "@astrojs/image/components";
 import { version } from "../../../package.json";
-
+const link = `https://github.com/CDzungx/Prozekt-Asolind/wiki/v${version}`;
 ---
 
 <footer
@@ -10,7 +10,7 @@ import { version } from "../../../package.json";
   style="row-gap: 0px;">
   <div class="items-center grid-flow-col py-0">
     <span class="prose">
-      <span><label class="indicator-item badge badge-secondary">v{version}</label> 2023 |</span>
+      <span><a href={link}><label class="indicator-item badge cursor-pointer badge-secondary">v{version}</a></label> 2023 |</span>
       <a
         property="dct:title"
         rel="cc:attributionURL"

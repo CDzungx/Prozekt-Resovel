@@ -5,7 +5,10 @@ import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
 import alpinejs from "@astrojs/alpinejs";
 import markdoc from "@astrojs/markdoc";
+import vercel from "@astrojs/vercel/serverless";
 import compress from "astro-compress";
+
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,4 +26,6 @@ export default defineConfig({
     markdoc(),
     compress(),
   ],
+  output: "server",
+  adapter: vercel({ analytics: true }),
 });
