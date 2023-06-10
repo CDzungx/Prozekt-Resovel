@@ -14,9 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    
     - name: Create Release Notes
-      uses: docker://decathlon/release-notes-generator-action:2.0.1
+      uses: Decathlon/release-notes-generator-action@v3.1.6
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         OUTPUT_FOLDER: temp_release_notes
         USE_MILESTONE_TITLE: "true"
+      changelog:
+        sections:
+        - title: "Enhancements"
+          labels: ["enhancements"]
+        - title: "Fixed"
+          labels: ["bug"]
+
+    - name: Upload Release Notes to Wiki
+      uses: docker://decathlon/wiki-page-creator-action:latest
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+        ACTION_MAIL: ${{ secrets.mail }}
+        ACTION_NAME: Changelog
+        OWNER: CDzungx
+        REPO_NAME: Prozekt-Asolind
+        MD_FOLDER: temp_release_notes

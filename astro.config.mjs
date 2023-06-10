@@ -9,6 +9,9 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
+  build: {
+    inlineStylesheets: "auto",
+  },
   integrations: [
     tailwind(),
     solidJs(),
