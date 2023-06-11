@@ -9,7 +9,6 @@ import vercel from "@astrojs/vercel/serverless";
 import compress from "astro-compress";
 
 
-
 // https://astro.build/config
 export default defineConfig({
   build: {
@@ -26,6 +25,6 @@ export default defineConfig({
     markdoc(),
     compress(),
   ],
-  output: "server",
+  output: "hybrid",
   adapter: vercel({ analytics: true }),
 });

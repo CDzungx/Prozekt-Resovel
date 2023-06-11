@@ -5,7 +5,8 @@ export interface Props {}
 const {} = Astro.props;
 ---
 
-<div class="navbar rounded-lg p-3 py-6 my-3">
+<div class="navbar rounded-lg p-3 pt-3 p-6 my-3">
+
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost btn-circle lg:hidden">
@@ -31,10 +32,11 @@ const {} = Astro.props;
         <li><a class="py-2" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a></li>
       </ul>
     </div>
-    <a href="/" class="mainTitle btn btn-ghost lg:prose-2xl prose-bold"
+    <a href="/" class="mainTitle btn btn-ghost lg:prose-2xl md:prose-2xl prose-bold"
       >Prozekt Asolind</a
     >
   </div>
+
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-2 text-lg">
       <li><a href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
@@ -42,6 +44,7 @@ const {} = Astro.props;
       <li><a href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a></li>
     </ul>
   </div>
+
   <div class="navbar-end">
     <div class="langSel hidden md:flex ">
       <select class="select select-bordered select-md sm:select-sm">
@@ -52,6 +55,7 @@ const {} = Astro.props;
     <div class="divider divider-horizontal"></div>
     <DarkSwitch client:load />
   </div>
+
 </div>
 
 <style>

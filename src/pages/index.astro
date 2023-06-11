@@ -1,71 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { Icon } from "astro-icon";
 import "animate.css";
 ---
 
-<Layout title="Asolin Prozekt">
-  <main class="mb-auto">
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-      <Card
-        href="/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
+<Layout title="Prozekt Asolind">
+  <main class="max-w-fit ">
+    <div class="space-y-4 items-center content-center">
+      <div id="mainTitle" class="text-6xl md:text-7xl lg:text-8xl font-extrabold">
+        <div id="typed-strings">
+          <p class="inline-flex md:flex lg:flex">Projekt Vietnam <span class="grid place-items-center">⭐</span></p>
+        </div>
+        <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
+      </div>
+      <br/>
+      <div id="startButton" class="invisible flex justify-center items-center mt-6">
+        <a href="/" target="_blank" class="inline-flex items-center gap-2 text-center dark:hover:text-black hover:text-white rounded-box border-2 border-[#171515] invert bg-base-200 px-5 py-3 transition-colors hover:bg-transparent hover focus:outline-none focus:ring active:opacity-75">
+            <span class="text-4xl lg:text-5xl font-bold ">Get Started</span>
+            <div class="box-border h-16 w-16 p-2">
+              <Icon name="line-md:arrow-right" />
+            </div>          
+        </a>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<script>
+  import Typed from "typed.js";
+
+  var typed = new Typed("#startTyped", {
+    stringsElement: "#typed-strings",
+    typeSpeed: 35,
+    showCursor: false,
+    onComplete: (self) => {
+      const startButton = document.querySelector("#startButton");
+      startButton.classList.remove("invisible");
+      startButton.classList.add("animate__animated", "animate__backInLeft");
+    },
+  });
+</script>
 
 <style>
   main {
     margin: auto;
     padding: 1.5rem;
-    max-width: 60ch;
   }
   h1 {
     font-size: 3rem;
@@ -78,30 +57,5 @@ import "animate.css";
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
   }
 </style>

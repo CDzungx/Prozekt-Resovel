@@ -1,18 +1,18 @@
 import { createSignal, onMount } from "solid-js";
 import { persistentAtom } from "@nanostores/persistent";
 
-export const currentTheme = persistentAtom("data-theme", "retro");
+export const currentTheme = persistentAtom("data-theme", "light");
 
 const DarkSwitch = () => {
-  const [currentThemeValue, setCurrentTheme] = createSignal("retro");
+  const [currentThemeValue, setCurrentTheme] = createSignal("light");
   function handleCheckboxChange(event) {
-    const newTheme = event.target.checked ? "business" : "retro";
+    const newTheme = event.target.checked ? "dark" : "light";
     setCurrentTheme(newTheme);
     currentTheme.set(newTheme); // Update the persistentAtom value
   }
   onMount(() => {
     setCurrentTheme(currentTheme.get());
-    if (currentThemeValue() === "business") {
+    if (currentThemeValue() === "dark") {
       document.getElementById("DarkmodeCheckbox").checked = true;
     }
     document.documentElement.setAttribute(
@@ -29,7 +29,7 @@ const DarkSwitch = () => {
           type="checkbox"
           onChange={handleCheckboxChange}
           data-act-class="ACTIVECLASS"
-          data-toggle-theme="business,retro"
+          data-toggle-theme="dark,light"
         />
         <svg
           class="swap-off fill-current w-10 h-10"
