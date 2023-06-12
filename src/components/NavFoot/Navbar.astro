@@ -1,15 +1,14 @@
 ---
-import DarkSwitch from "./DarkSwitch.jsx"
+import DarkSwitch from "./DarkSwitch.jsx";
 export interface Props {}
 
 const {} = Astro.props;
 ---
 
-<div class="navbar rounded-lg p-3 pt-3 p-6 my-3">
-
+<div class="navbar my-3 rounded-lg p-3 md:px-5 lg:px-6 pb-6">
   <div class="navbar-start">
     <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost btn-circle lg:hidden">
+      <label tabindex="0" class="btn-ghost btn-circle btn lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -25,14 +24,15 @@ const {} = Astro.props;
       </label>
       <ul
         tabindex="0"
-        class="menu drawer menu-sm dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
-      >
+        class="drawer dropdown-content menu rounded-box menu-sm mt-3 w-52 bg-base-300 p-2 shadow">
         <li><a class="py-2" href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
         <li><a class="py-2" href="/blog">Blog</a></li>
-        <li><a class="py-2" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a></li>
+        <li>
+          <a class="py-2" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a>
+        </li>
       </ul>
     </div>
-    <a href="/" class="mainTitle btn btn-ghost lg:prose-2xl md:prose-2xl prose-bold"
+    <a href="/" class="mainTitle prose-bold btn-ghost btn md:prose-2xl lg:prose-2xl"
       >Prozekt Asolind</a
     >
   </div>
@@ -46,8 +46,8 @@ const {} = Astro.props;
   </div>
 
   <div class="navbar-end">
-    <div class="langSel hidden md:flex ">
-      <select class="select select-bordered select-md sm:select-sm">
+    <div class="langSel hidden md:flex">
+      <select class="select-bordered select select-md sm:select-sm">
         <option>English</option>
         <option class="VNFont">Tiếng Việt</option>
       </select>
@@ -55,12 +55,11 @@ const {} = Astro.props;
     <div class="divider divider-horizontal"></div>
     <DarkSwitch client:load />
   </div>
-
 </div>
 
 <style>
-  .VNFont{
-    font-family: 'Baloo 2', cursive;
+  .VNFont {
+    font-family: "Baloo 2", cursive;
     font-weight: bolder;
   }
 </style>

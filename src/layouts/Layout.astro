@@ -9,22 +9,19 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="A project with Astro, SolidJS, TailwindCSS" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline>
-      document.documentElement.setAttribute(
-        "data-theme",
-        localStorage.getItem("data-theme")
-      );
+      document.documentElement.setAttribute("data-theme", localStorage.getItem("data-theme"));
     </script>
     <script>
       import { themeChange } from "theme-change";
       themeChange();
     </script>
   </head>
-  <body class="flex flex-col h-screen mb-auto">
+  <body class="mb-auto flex h-screen flex-col">
     <Navbar />
     <slot />
     <Footer />
@@ -36,8 +33,8 @@ const { title } = Astro.props;
       transition-duration: 0.2s;
     }
     body code {
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+        Bitstream Vera Sans Mono, Courier New, monospace;
     }
     .navbar {
       font-family: "Carter One", cursive;
@@ -52,5 +49,4 @@ const { title } = Astro.props;
       transition-duration: 2s;
     }
   </style>
-
 </html>

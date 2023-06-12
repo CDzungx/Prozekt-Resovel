@@ -5,51 +5,23 @@ import { version } from "../../../package.json";
 const link = `https://github.com/CDzungx/Prozekt-Asolind/wiki/v${version}`;
 ---
 
-<footer
-  class="footer static bottom-0 p-4 px-6 items-center bg-base-300 text-base-content"
-  style="row-gap: 0px;">
-  <div class="items-center grid-flow-col py-0">
+<footer class="footer static bottom-0 items-center bg-base-300 p-4 px-6 text-base-content" style="row-gap: 0px;">
+  <div class="grid-flow-col items-center py-0">
     <span class="prose">
-      <span><a href={link}><label class="indicator-item badge cursor-pointer badge-secondary">v{version}</a></label> 2023 |</span>
-      <a
-        property="dct:title"
-        rel="cc:attributionURL"
-        href="https://github.com/CDzungx/Prozekt-Asolind">Asolind Prozekt</a
-      > </a
-      > is licensed under <span class="inline-block prose font-semibold">CC BY-NC 4.0</span>
-    </span>
-    <a
-      href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
-      target="_blank"
-      rel="license noopener noreferrer"
+      <span><a href={link}><label class="badge badge-secondary indicator-item cursor-pointer">v{version}</label></a> 2023 |</span>
+      <a property="dct:title" rel="cc:attributionURL" href="https://github.com/CDzungx/Prozekt-Asolind">Prozekt Asolind</a>
+      is licensed under <span class="prose inline-block font-semibold">CC BY-NC 4.0</span></span
     >
+    <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
       <div class="flex">
-        <Image
-          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          format="svg"
-          alt="CC"
-          width={20}
-          height={20}
-        />
-        <Image
-          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-          format="svg"
-          alt="BY"
-          width={20}
-          height={20}
-        />
-        <Image
-          src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
-          format="svg"
-          alt="NC"
-          width={20}
-          height={20}
-        />
+        <Image src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" format="svg" alt="CC" width={20} height={20} />
+        <Image src="https://mirrors.creativecommons.org/presskit/icons/by.svg" format="svg" alt="BY" width={20} height={20} />
+        <Image src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" format="svg" alt="NC" width={20} height={20} />
       </div>
     </a>
   </div>
   <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-    <div class="hidden lg:flex md:flex">
+    <div class="hidden md:flex lg:flex">
       <a href="https://github.com/CDzungx/prozekt-asolind" target="_blank">
         <div class="box-border h-8 w-8">
           <Icon name="mdi:github" />

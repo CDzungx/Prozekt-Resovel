@@ -5,21 +5,25 @@ import "animate.css";
 ---
 
 <Layout title="Prozekt Asolind">
-  <main class="max-w-fit ">
-    <div class="space-y-4 items-center content-center">
-      <div id="mainTitle" class="text-6xl md:text-7xl lg:text-8xl font-extrabold">
+  <main class="max-w-fit">
+    <div class="content-center items-center space-y-4">
+      <div id="mainTitle" class="text-6xl font-extrabold md:text-7xl lg:text-8xl">
         <div id="typed-strings">
-          <p class="inline-flex md:flex lg:flex">Projekt Vietnam <span class="grid place-items-center">⭐</span></p>
+          <p class="inline-flex md:flex lg:flex hidden">
+            Projekt Vietnam <span class="grid place-items-center">⭐</span>
+          </p>
         </div>
         <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
       </div>
-      <br/>
-      <div id="startButton" class="invisible flex justify-center items-center mt-6">
-        <a href="/" target="_blank" class="inline-flex items-center gap-2 text-center dark:hover:text-black hover:text-white rounded-box border-2 border-[#171515] invert bg-base-200 px-5 py-3 transition-colors hover:bg-transparent hover focus:outline-none focus:ring active:opacity-75">
-            <span class="text-4xl lg:text-5xl font-bold ">Get Started</span>
-            <div class="box-border h-16 w-16 p-2">
-              <Icon name="line-md:arrow-right" />
-            </div>          
+      <br />
+      <div id="startButton" class="invisible mt-6 flex items-center justify-center">
+        <a
+          href="/"
+          class="hover rounded-box inline-flex items-center gap-2 border-2 border-[#171515] bg-base-200 px-5 py-3 text-center invert transition-colors hover:bg-transparent hover:text-white focus:outline-none focus:ring active:opacity-75 dark:hover:text-black">
+          <span class="text-4xl font-bold lg:text-5xl">Get Started</span>
+          <div class="box-border h-16 w-16 p-2">
+            <Icon name="line-md:arrow-right" />
+          </div>
         </a>
       </div>
     </div>
