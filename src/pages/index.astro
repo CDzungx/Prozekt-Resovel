@@ -1,65 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon";
-import "animate.css";
+import Landing from "./landing.astro";
 ---
 
 <Layout title="Prozekt Asolind">
-  <main class="max-w-fit">
-    <div class="content-center items-center space-y-4">
-      <div id="mainTitle" class="text-6xl font-extrabold md:text-7xl lg:text-8xl">
-        <div id="typed-strings">
-          <p class="inline-flex md:flex lg:flex hidden">
-            Projekt Vietnam <span class="grid place-items-center">⭐</span>
-          </p>
-        </div>
-        <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
-      </div>
-      <br />
-      <div id="startButton" class="invisible mt-6 flex items-center justify-center">
-        <a
-          href="/"
-          class="hover rounded-box inline-flex items-center gap-2 border-2 border-[#171515] bg-base-200 px-5 py-3 text-center invert transition-colors hover:bg-transparent hover:text-white focus:outline-none focus:ring active:opacity-75 dark:hover:text-black">
-          <span class="text-4xl font-bold lg:text-5xl">Get Started</span>
-          <div class="box-border h-16 w-16 p-2">
-            <Icon name="line-md:arrow-right" />
-          </div>
-        </a>
-      </div>
-    </div>
-  </main>
+  <Landing />
 </Layout>
-
-<script>
-  import Typed from "typed.js";
-
-  var typed = new Typed("#startTyped", {
-    stringsElement: "#typed-strings",
-    typeSpeed: 35,
-    showCursor: false,
-    onComplete: (self) => {
-      const startButton = document.querySelector("#startButton");
-      startButton.classList.remove("invisible");
-      startButton.classList.add("animate__animated", "animate__backInLeft");
-    },
-  });
-</script>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-</style>
