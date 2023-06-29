@@ -2,9 +2,9 @@
 import { Icon } from "astro-icon";
 import { Image } from "@astrojs/image/components";
 import { version } from "../../../package.json";
+import Debug from "./Debug";
 const link = `https://github.com/CDzungx/Prozekt-Asolind/wiki/v${version}`;
 ---
-
 <footer class="footer static bottom-0 items-center bg-base-300 p-4 px-6 text-base-content" style="row-gap: 0px;">
   <div class="grid-flow-col items-center py-0">
     <span class="prose">
@@ -22,13 +22,20 @@ const link = `https://github.com/CDzungx/Prozekt-Asolind/wiki/v${version}`;
   </div>
   <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
     <div class="hidden md:flex lg:flex">
-      <a href="https://github.com/CDzungx/prozekt-asolind" target="_blank">
+      <button onclick="debugModal.showModal();" id="modalButton" aria-label="Debug">
+        <div class="box-border h-8 w-8">
+          <Icon name="ph:code-fill" />
+        </div></button
+      >
+      <Debug client:idle/>
+      <div class="divider divider-horizontal mx-0"></div>
+      <a href="https://github.com/CDzungx/prozekt-asolind" target="_blank" aria-label="Github">
         <div class="box-border h-8 w-8">
           <Icon name="mdi:github" />
         </div>
       </a>
       <div class="divider divider-horizontal mx-0"></div>
-      <a href="https://discordapp.com/users/1088612635219599460" target="_blank">
+      <a href="https://discordapp.com/users/1088612635219599460" target="_blank" aria-label="Discord">
         <div class="box-border h-8 w-8">
           <Icon name="ic:outline-discord" />
         </div>

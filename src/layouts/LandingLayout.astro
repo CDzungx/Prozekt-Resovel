@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/NavFoot/Navbar.astro";
 import Footer from "../components/NavFoot/Footer.astro";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 const { title } = Astro.props;
 ---
 
@@ -13,6 +14,8 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Carter+One&display=swap">
+    </GoogleFontsOptimizer>
     <script is:inline>
       document.documentElement.setAttribute("data-theme", localStorage.getItem("data-theme"));
     </script>
@@ -26,8 +29,7 @@ const { title } = Astro.props;
     <slot />
     <Footer />
   </body>
-  <style is:global>
-    @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Carter+One&display=swap");
+  <style type="text/css" is:global>
     html {
       font-family: system-ui, sans-serif;
       transition-duration: 0.2s;

@@ -1,7 +1,6 @@
 ---
-import { Icon } from "astro-icon";
-import LandingButton from "../components/animate/LandingButton";
-import "animate.css";
+import AnimatedStartBtn from "../components/animate/AnimatedStartBtn";
+import "animate.css/animate.min.css";
 ---
 
 <main class="m-auto max-w-fit p-8">
@@ -15,13 +14,12 @@ import "animate.css";
       <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
     </div>
     <br/>
-    <LandingButton client:load>
+    <AnimatedStartBtn client:idle>
   </div>
 </main>
 
 <script>
   import Typed from "typed.js";
-
   var typed = new Typed("#startTyped", {
     stringsElement: "#typed-strings",
     typeSpeed: 35,
