@@ -1,49 +1,55 @@
 ---
-import DarkSwitch from "./DarkSwitch.jsx";
+import DarkSwitch from '@components/NavFoot/DarkSwitch';
 ---
 
 <div class="navbar my-3 rounded-lg p-3 pb-6 md:px-5 lg:px-6">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <label tabindex="0" class="btn-ghost btn-circle btn lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg
-        >
-      </label>
-      <ul tabindex="0" class="drawer dropdown-content menu rounded-box menu-sm mt-3 w-52 bg-base-300 p-2 shadow">
-        <li><a class="py-2" href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
-        <li><a class="py-2" href="/blog">Blog</a></li>
-        <li>
-          <a class="py-2" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a>
-        </li>
+   <div class="navbar-start">
+      <div class="dropdown">
+         <label tabindex="0" class="btn-ghost btn-circle btn lg:hidden">
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               class="h-5 w-5"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+               ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"
+               ></path></svg
+            >
+         </label>
+         <ul tabindex="0" class="drawer dropdown-content menu rounded-box menu-sm mt-3 w-52 bg-base-300 p-2 shadow">
+            <li><a class="py-2" href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
+            <li><a class="py-2" href="/blog">Blog</a></li>
+            <li>
+               <a class="py-2" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a>
+            </li>
+         </ul>
+      </div>
+      <a href="/" class="mainTitle prose-bold btn-ghost btn text-xl md:text-2xl lg:text-3xl">Prozekt Asolind</a>
+   </div>
+
+   <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-2 text-lg">
+         <li><a href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
+         <li class="px-6"><a href="/blog">Blog</a></li>
+         <li><a href="https://github.com/users/CDzungx/projects/2/views/3">Roadmap</a></li>
       </ul>
-    </div>
-    <a href="/" class="mainTitle prose-bold btn-ghost btn text-xl md:text-2xl lg:text-3xl">Prozekt Asolind</a>
-  </div>
+   </div>
 
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-2 text-lg">
-      <li><a href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
-      <li class="px-6"><a href="/blog">Blog</a></li>
-      <li><a href="https://github.com/users/CDzungx/projects/2/views/3">Roadmap</a></li>
-    </ul>
-  </div>
-
-  <div class="navbar-end">
-    <div class="langSel hidden md:flex">
-      <select class="select-bordered select select-md sm:select-sm">
-        <option>English</option>
-        <option class="VNFont">Tiếng Việt</option>
-      </select>
-    </div>
-    <div class="divider divider-horizontal"></div>
-    <DarkSwitch client:load/>
-  </div>
+   <div class="navbar-end">
+      <div class="langSel hidden md:flex">
+         <select class="select-bordered select select-md sm:select-sm">
+            <option>English</option>
+            <option class="VNFont">Tiếng Việt</option>
+         </select>
+      </div>
+      <div class="divider divider-horizontal hidden md:flex lg:flex"></div>
+      <DarkSwitch client:load />
+   </div>
 </div>
 
 <style>
-  .VNFont {
-    font-family: "Baloo 2", cursive;
-    font-weight: bolder;
-  }
+   .VNFont {
+      font-family: 'Baloo 2', cursive;
+      font-weight: bolder;
+   }
 </style>

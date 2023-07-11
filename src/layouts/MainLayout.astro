@@ -1,0 +1,58 @@
+---
+import Navbar from '@components/NavFoot/Navbar.astro';
+import Footer from '@components/NavFoot/Footer.astro';
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="description" content="A project with Astro, SolidJS, TailwindCSS" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+      <title>{title}</title>
+      <GoogleFontsOptimizer
+         url="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Carter+One&family=Lobster&display=swap"
+      />
+      <script is:inline>
+         document.documentElement.setAttribute('data-theme', localStorage.getItem('data-theme'));
+      </script>
+      <script>
+         import { themeChange } from 'theme-change';
+         themeChange();
+      </script>
+   </head>
+   <body class="mb-auto flex h-[100dvh] flex-col">
+      <Navbar />
+      <slot />
+      <Footer />
+      <style type="text/css" is:global>
+         html {
+            font-family: system-ui, sans-serif;
+            transition-duration: 0.25s;
+         }
+         body code {
+            font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+               Courier New, monospace;
+         }
+         .navbar {
+            font-family: 'Carter One', cursive;
+         }
+         .mainTitle {
+            font-weight: 900;
+         }
+         .drawer {
+            z-index: 99999;
+         }
+         .prose {
+            transition-duration: 1s;
+         }
+         #startTyped {
+            font-family: 'Lobster', cursive;
+         }
+      </style>
+   </body>
+</html>

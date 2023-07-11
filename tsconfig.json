@@ -1,21 +1,25 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": false,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "types": [
-      "vite/client"
-    ],
-    "noEmit": true,
-    "isolatedModules": true,
-    "importsNotUsedAsValues": "preserve"
-  }
+   "extends": "astro/tsconfigs/strict",
+   "compilerOptions": {
+      "strict": true,
+      "strictNullChecks": false,
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "jsx": "react-jsx",
+      "jsxImportSource": "react",
+      "types": ["vite/client"],
+      "noEmit": true,
+      "isolatedModules": true,
+      "importsNotUsedAsValues": "preserve",
+      "baseUrl": ".",
+      "paths": {
+         "@components/*": ["src/components/*"],
+         "@layouts/*": ["src/layouts/*"],
+         "@pages/*": ["src/pages/*"]
+      }
+   }
 }

@@ -1,33 +1,39 @@
 ---
-import AnimatedStartBtn from "../components/animate/AnimatedStartBtn";
-import "animate.css/animate.min.css";
+import AnimatedStartBtn from '@components/animate/AnimatedStartBtn';
+import 'animate.css/animate.min.css';
 ---
 
 <main class="m-auto max-w-fit p-8">
-  <div class="content-center items-center space-y-4">
-    <div id="mainTitle" class="text-6xl font-extrabold md:text-7xl lg:text-8xl">
-      <div id="typed-strings">
-        <p class="hidden md:flex lg:flex">
-          Projekt Vietnam <span class="grid place-items-center">⭐</span>
-        </p>
+   <div class="content-center items-center space-y-4">
+      <div id="mainTitle" class="invisible text-6xl font-extrabold md:text-7xl lg:text-8xl">
+         <div id="typed-strings">
+            <p class="md:flex lg:flex">
+               Projezk Vietnam <span class="grid place-items-center">⭐</span>
+            </p>
+         </div>
+         <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
       </div>
-      <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
-    </div>
-    <br/>
-    <AnimatedStartBtn client:idle>
-  </div>
-</main>
+      <br />
+      <AnimatedStartBtn client:idle />
+   </div>
 
-<script>
-  import Typed from "typed.js";
-  var typed = new Typed("#startTyped", {
-    stringsElement: "#typed-strings",
-    typeSpeed: 35,
-    showCursor: false,
-    onComplete: (self) => {
-      const startButton = document.querySelector("#landingButton");
-      startButton.classList.remove("invisible");
-      startButton.classList.add("animate__animated", "animate__backInLeft");
-    },
-  });
-</script>
+   <script>
+      import Typed from 'typed.js';
+      setTimeout(() => {
+         var typed = new Typed('#startTyped', {
+            stringsElement: '#typed-strings',
+            typeSpeed: 38,
+            showCursor: false,
+            onBegin: (self) => {
+               const title = document.querySelector('#mainTitle');
+               title.classList.remove('invisible');
+            },
+            onComplete: (self) => {
+               const startButton = document.querySelector('#landingButton');
+               startButton.classList.remove('invisible');
+               startButton.classList.add('animate__animated', 'animate__backInLeft');
+            },
+         });
+      }, 300);
+   </script>
+</main>

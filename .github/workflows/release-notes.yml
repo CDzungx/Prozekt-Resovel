@@ -1,33 +1,33 @@
 name: version-notes
 
-on: 
+on:
   milestone:
     types: [closed]
     workflow_dispatch:
     inputs:
       milestoneId:
-        description: 'Milestone ID'     
+        description: 'Milestone ID'
         required: true
         default: '1'
 jobs:
   create-release-notes:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    
-    - name: Create Release Notes
-      uses: Decathlon/release-notes-generator-action@v3.1.6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OUTPUT_FOLDER: temp_release_notes
-        USE_MILESTONE_TITLE: "true"
+      - uses: actions/checkout@master
 
-    - name: Upload Release Notes to Wiki
-      uses: docker://decathlon/wiki-page-creator-action:latest
-      env:
-        GH_PAT: ${{ secrets.GH_PAT }}
-        ACTION_MAIL: ${{ secrets.mail }}
-        ACTION_NAME: Changelog
-        OWNER: CDzungx
-        REPO_NAME: Prozekt-Asolind
-        MD_FOLDER: temp_release_notes
+      - name: Create Release Notes
+        uses: Decathlon/release-notes-generator-action@v3.1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_FOLDER: temp_release_notes
+          USE_MILESTONE_TITLE: 'true'
+
+      - name: Upload Release Notes to Wiki
+        uses: docker://decathlon/wiki-page-creator-action:latest
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          ACTION_MAIL: ${{ secrets.mail }}
+          ACTION_NAME: Changelog
+          OWNER: CDzungx
+          REPO_NAME: Prozekt-Asolind
+          MD_FOLDER: temp_release_notes

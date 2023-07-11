@@ -1,45 +1,17 @@
 {
-  "editor.codeActionsOnSave": { "source.fixAll": true },
-  "editor.codeActionsOnSaveTimeout": 100000,
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": {
-        "parser": "astro"
+   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+   "overrides": [
+      {
+         "files": "*.astro",
+         "options": {
+            "parser": "astro"
+         }
       }
-    }
-  ],
-  "tailwindConfig": "tailwind.config.cjs",
-  "printWidth": 200,
-  "bracketSameLine": true,
-  "pluginSearchDirs": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveTimeout": 100000,
-  "editor.formatOnType": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.enable": true,
-  "html.format.enable": true,
-  "htmlhint.enable": true,
-  "prettier.requireConfig": true,
-  "editorConfig": true,
-  "stylelint.autoFixOnSave": true,
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+   ],
+   "tailwindConfig": "tailwind.config.cjs",
+   "printWidth": 120,
+   "bracketSameLine": true,
+   "singleQuote": true,
+   "tabWidth": 3,
+   "pluginSearchDirs": false
 }

@@ -1,45 +1,74 @@
 ---
-import { Icon } from "astro-icon";
-import { Image } from "@astrojs/image/components";
-import { version } from "../../../package.json";
-import Debug from "./Debug";
+import { Icon } from 'astro-icon/components';
+import { Image } from '@astrojs/image/components';
+import { version } from '../../../package.json';
+import Debug from '@components/NavFoot/Debug';
 const link = `https://github.com/CDzungx/Prozekt-Asolind/wiki/v${version}`;
 ---
-<footer class="footer static bottom-0 items-center bg-base-300 p-4 px-6 text-base-content" style="row-gap: 0px;">
-  <div class="grid-flow-col items-center py-0">
-    <span class="prose">
-      <span><a href={link}><label class="badge badge-secondary indicator-item cursor-pointer">v{version}</label></a> 2023 |</span>
-      <a property="dct:title" rel="cc:attributionURL" href="https://github.com/CDzungx/Prozekt-Asolind">Prozekt Asolind</a>
-      is licensed under <span class="prose inline-block font-semibold">CC BY-NC 4.0</span></span
-    >
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
-      <div class="flex">
-        <Image src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" format="svg" alt="CC" width={20} height={20} />
-        <Image src="https://mirrors.creativecommons.org/presskit/icons/by.svg" format="svg" alt="BY" width={20} height={20} />
-        <Image src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" format="svg" alt="NC" width={20} height={20} />
-      </div>
-    </a>
-  </div>
-  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-    <div class="hidden md:flex lg:flex">
-      <button onclick="debugModal.showModal();" id="modalButton" aria-label="Debug">
-        <div class="box-border h-8 w-8">
-          <Icon name="ph:code-fill" />
-        </div></button
+
+<footer
+   class="footer static bottom-0 items-center bg-base-300 p-3 px-5 text-base-content md:p-4 md:px-6"
+   style="row-gap: 0px;">
+   <div class="grid-flow-col items-center py-0">
+      <span class="prose">
+         <span
+            ><a href={link}><label class="badge badge-secondary indicator-item cursor-pointer">v{version}</label></a> 2023
+            |&nbsp;</span
+         >
+         <a property="dct:title" rel="cc:attributionURL" href="https://github.com/CDzungx/Prozekt-Asolind"
+            >Prozekt Asolind</a
+         >
+         is licensed under <span class="prose inline-block font-semibold">CC BY-NC 4.0</span></span
       >
-      <Debug client:idle/>
-      <div class="divider divider-horizontal mx-0"></div>
-      <a href="https://github.com/CDzungx/prozekt-asolind" target="_blank" aria-label="Github">
-        <div class="box-border h-8 w-8">
-          <Icon name="mdi:github" />
-        </div>
+      <a
+         href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+         target="_blank"
+         rel="license noopener noreferrer">
+         <figure class="flex">
+            <Image
+               src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+               format="svg"
+               alt="CC"
+               width={20}
+               height={20}
+            />
+            <Image
+               src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+               format="svg"
+               alt="BY"
+               width={20}
+               height={20}
+            />
+            <Image
+               src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+               format="svg"
+               alt="NC"
+               width={20}
+               height={20}
+            />
+         </figure>
       </a>
-      <div class="divider divider-horizontal mx-0"></div>
-      <a href="https://discordapp.com/users/1088612635219599460" target="_blank" aria-label="Discord">
-        <div class="box-border h-8 w-8">
-          <Icon name="ic:outline-discord" />
-        </div>
-      </a>
-    </div>
-  </div>
+   </div>
+   <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <div class="hidden md:flex lg:flex">
+         <button onclick="debugModal.showModal();" id="modalButton" aria-label="Debug">
+            <div class="box-border">
+               <Icon name="ph:code-fill" class="h-8 w-8" />
+            </div></button
+         >
+         <Debug client:idle />
+         <div class="divider divider-horizontal mx-0"></div>
+         <a href="https://github.com/CDzungx/prozekt-asolind" target="_blank" aria-label="Github">
+            <div class="box-border">
+               <Icon name="mdi:github" class="h-8 w-8" />
+            </div>
+         </a>
+         <div class="divider divider-horizontal mx-0"></div>
+         <a href="https://discordapp.com/users/1088612635219599460" target="_blank" aria-label="Discord">
+            <div class="box-border">
+               <Icon name="ic:outline-discord" class="h-8 w-8" />
+            </div>
+         </a>
+      </div>
+   </div>
 </footer>

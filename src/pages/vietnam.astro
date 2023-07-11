@@ -1,7 +1,26 @@
 ---
-import { Icon } from "astro-icon";
+import Loader from '@components/animate/Loader';
+import Countdown from '@components/items/CountdownReact';
 
-import "animate.css";
+import { useState, useEffect } from 'react';
 ---
 
-
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Prozekt Vietnam</title>
+      <meta charset="UTF-8" />
+      <meta name="description" content="A project with Astro, SolidJS, TailwindCSS" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+   </head>
+   <body>
+      <div class="loader">
+         <Loader client:load />
+      </div>
+      <div id="content" class="hidden">
+         <Countdown client:load />
+      </div>
+   </body>
+</html>
