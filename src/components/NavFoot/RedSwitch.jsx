@@ -1,14 +1,14 @@
 /** @jsxImportSource solid-js */
 
 import { createSignal, onMount } from 'solid-js';
-import { $dataTheme } from '@store/DataStore';
+import { $dataThemeVN } from '@store/DataStore';
 const DarkSwitch = () => {
    const [currentThemeValue, setCurrentTheme] = createSignal(localStorage.getItem('data-theme') || 'light');
    function handleCheckboxChange(event) {
-      const newTheme = event.target.checked ? 'dark' : 'light';
+      const newTheme = event.target.checked ? 'red' : 'darkred';
       setCurrentTheme(newTheme);
       localStorage.setItem('data-theme', newTheme);
-      $dataTheme.set(currentThemeValue());
+      $dataThemeVN.set(currentThemeValue());
    }
 
    onMount(() => {
@@ -25,11 +25,11 @@ const DarkSwitch = () => {
          document.getElementById('DarkmodeCheckbox').checked = true;
       }
       document.documentElement.setAttribute('data-theme', currentThemeValue());
-      $dataTheme.set(currentThemeValue());
+      $dataThemeVN.set(currentThemeValue());
    });
 
    return (
-      <label aria-label="DarkSwitchLable" class="swap swap-rotate">
+      <label aria-label="DarkSwitchLable" class="swap-rotate swap">
          <input
             id="DarkmodeCheckbox"
             type="checkbox"

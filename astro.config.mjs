@@ -1,33 +1,35 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 import react from '@astrojs/react';
 import solidJs from '@astrojs/solid-js';
-import alpinejs from '@astrojs/alpinejs';
 import prefetch from '@astrojs/prefetch';
-import markdoc from '@astrojs/markdoc';
 import tailwind from '@astrojs/tailwind';
-import image from '@astrojs/image';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel/serverless';
 import robotsTxt from 'astro-robots-txt';
 import compress from 'astro-compress';
+import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
-   site: 'https://prozekt-asolind.vercel.app/',
+   site: 'https://prozekt-resovel.vercel.app/',
+   experimental: {
+      assets: true,
+      redirects: true,
+   },
+   image: {
+      service: sharpImageService(),
+   },
+
    integrations: [
       prefetch(),
-      markdoc(),
       tailwind(),
-      image({
-         cacheDir: './.cache/image',
-         serviceEntryPoint: '@astrojs/image/sharp',
-      }),
       icon({
          include: {
-            mdi: ['github'],
+            mdi: ['github', 'arrow-left-thick'],
             ic: ['outline-discord'],
             ph: ['code-fill'],
+            emojione: ['flag-for-united-kingdom', 'flag-for-vietnam'],
          },
       }),
       sitemap(),
@@ -35,15 +37,12 @@ export default defineConfig({
       compress(),
       react(),
       solidJs(),
-      alpinejs(),
+      svelte(),
    ],
    build: {
       inlineStylesheets: 'auto',
    },
    compressHTML: true,
-   ssr: {
-      noExternal: ['animate.css'],
-   },
    output: 'hybrid',
    adapter: vercel({
       analytics: true,

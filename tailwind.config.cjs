@@ -27,6 +27,20 @@ module.exports = {
                '--rounded-btn': '0.6rem',
             },
          },
+         {
+            red: {
+               ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
+               '--rounded-btn': '0.6rem',
+               '--rounded-lg': '1rem',
+            },
+         },
+         {
+            darkred: {
+               ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
+               '--rounded-btn': '0.6rem',
+               '--rounded-lg': '1rem',
+            },
+         },
       ],
    },
 };

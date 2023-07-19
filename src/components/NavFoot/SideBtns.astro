@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import DarkSwitch from '@components/NavFoot/DarkSwitch';
+import LanguageSelectIcon from '@components/NavFoot/LanguageSelectIcon.svelte';
+---
+
+<div class="sideBtns btn-circle fixed ml-2 mt-2 md:ml-4 md:mt-4">
+   <div class="backdrop-blur-20 relative min-w-fit rounded-2xl p-3 backdrop-brightness-75 backdrop-opacity-50">
+      <a
+         href="/"
+         aria-label="Back link"
+         class="hidden md:flex duration-300 ease-in-out hover:scale-110 tooltip tooltip-right"
+         data-tip="Back">
+         <button aria-label="Back" class="backBtn btn btn-circle">
+            <Icon name="mdi:arrow-left-thick" class="flex h-8 w-8" />
+         </button>
+         <br />
+      </a>
+      <div class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110" data-tip="Darkmode">
+         <button aria-label="Darkmode Switch" class="btn btn-circle mb-3 md:my-3">
+            <DarkSwitch client:load />
+         </button>
+      </div>
+      <br />
+      <button
+         aria-label="Language Switch"
+         class="tooltip tooltip-right flex-wrap duration-300 ease-in-out hover:scale-110 w-12 h-12"
+         data-tip="Language">
+         <LanguageSelectIcon client:load />
+      </button>
+   </div>
+</div>

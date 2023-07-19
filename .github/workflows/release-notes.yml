@@ -29,5 +29,5 @@ jobs:
           ACTION_MAIL: ${{ secrets.mail }}
           ACTION_NAME: Changelog
           OWNER: CDzungx
-          REPO_NAME: Prozekt-Asolind
+          REPO_NAME: Prozekt-Resovel
           MD_FOLDER: temp_release_notes

@@ -1,14 +1,20 @@
 ---
 import AnimatedStartBtn from '@components/animate/AnimatedStartBtn';
+import SvelteLoader from '@components/items/SvelteLoader.svelte';
 import 'animate.css/animate.min.css';
 ---
 
-<main class="m-auto max-w-fit p-8">
+<main class="m-auto p-8">
    <div class="content-center items-center space-y-4">
       <div id="mainTitle" class="invisible text-6xl font-extrabold md:text-7xl lg:text-8xl">
          <div id="typed-strings">
             <p class="md:flex lg:flex">
-               Projezk Vietnam <span class="grid place-items-center">⭐</span>
+               Projezk Vietnam
+               <span class="hidden md:flex">&nbsp;</span>
+               <span class="group m-auto">
+                  <span class="grid cursor-default group-hover:hidden">⭐</span>
+                  <span class="hidden cursor-default group-hover:grid">🌟</span>
+               </span>
             </p>
          </div>
          <span id="startTyped" class="inline-flex md:flex lg:flex"></span>

@@ -3,8 +3,8 @@
    "compilerOptions": {
       "strict": true,
       "strictNullChecks": false,
-      "target": "ESNext",
-      "module": "ESNext",
+      "target": "ES2022",
+      "module": "ES2022",
       "moduleResolution": "node",
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
@@ -19,7 +19,9 @@
       "paths": {
          "@components/*": ["src/components/*"],
          "@layouts/*": ["src/layouts/*"],
-         "@pages/*": ["src/pages/*"]
+         "@pages/*": ["src/pages/*"],
+         "@assets/*": ["src/assets/*"],
+         "@store/*": ["src/store/*"]
       }
    }
 }

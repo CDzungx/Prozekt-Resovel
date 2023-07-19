@@ -1,0 +1,17 @@
+{
+   "vncd": {
+      "thongnhat": "Ngàu Thống Nhất Đất Nước",
+      "quockhanh": "Ngày Quốc Khánh Việt Nam",
+      "day": "ngày",
+      "hour": "giờ",
+      "min": "phút",
+      "sec": "giây"
+   },
+   "navcontent": {
+      "back": "Trở về",
+      "darkmode": "Chế độ tối",
+      "language": "Ngôn ngữ",
+      "license": "sử dụng giấy phép",
+      "start": "Bắt Đầu"
+   }
+}

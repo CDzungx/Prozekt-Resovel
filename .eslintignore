@@ -11,3 +11,4 @@ pnpm-debug.log*
 .vercel
 .vscode
 .github
+astro_tmp_pages_*

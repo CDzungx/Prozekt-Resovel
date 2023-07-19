@@ -1,5 +1,5 @@
 {
-   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+   "plugins": ["prettier-plugin-astro", "prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
    "overrides": [
       {
          "files": "*.astro",
@@ -12,6 +12,5 @@
    "printWidth": 120,
    "bracketSameLine": true,
    "singleQuote": true,
-   "tabWidth": 3,
-   "pluginSearchDirs": false
+   "tabWidth": 3
 }
