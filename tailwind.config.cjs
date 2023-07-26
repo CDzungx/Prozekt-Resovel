@@ -2,7 +2,17 @@
 module.exports = {
    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,mdoc,svelte,ts,tsx,vue}'],
    theme: {
-      extend: {},
+      extend: {
+         fontFamily: {
+            lobster: ['Lobster', 'sans-serif'],
+            carter: ['Carter One', 'sans-serif'],
+            georgia: ['Georgia', 'serif'],
+            trebuchet: ['Trebuchet MS', 'sans-serif'],
+            ibmplex: ['IBM Plex Mono', 'monospace'],
+            slabone: ['Alfa Slab One', 'sans-serif'],
+            paytone: ['Paytone One', 'sans-serif'],
+         },
+      },
    },
    darkMode: ['class', '[data-theme=dark]'],
    plugins: [require('@tailwindcss/typography'), require('daisyui')],
@@ -10,7 +20,7 @@ module.exports = {
       base: true, // applies background color and foreground color for root element by default
       styled: true, // include daisyUI colors and design decisions for all components
       utils: true, // adds responsive and modifier utility classes
-      logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+      logs: false,
       themes: [
          {
             light: {
@@ -22,7 +32,8 @@ module.exports = {
          {
             dark: {
                ...require('daisyui/src/theming/themes')['[data-theme=business]'],
-               'base-100': '#2C2626',
+               neutral: '#242e32',
+               'base-100': '#383429',
                '--rounded-box': '1rem',
                '--rounded-btn': '0.6rem',
             },

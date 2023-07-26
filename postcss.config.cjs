@@ -6,6 +6,7 @@ const postcssURL = require('postcss-url');
 
 module.exports = {
    plugins: [
+      tailwindcss(),
       postcssPresetEnv({
          features: {
             'nesting-rules': true,
@@ -15,7 +16,13 @@ module.exports = {
       }),
       postcssURL({ url: 'copy', useHash: true }),
       postcssNested(),
-      tailwindcss(),
-      cssnano({ preset: 'advanced' }),
+      cssnano({
+         preset: [
+            'advanced',
+            {
+               discardUnused: false,
+            },
+         ],
+      }),
    ],
 };

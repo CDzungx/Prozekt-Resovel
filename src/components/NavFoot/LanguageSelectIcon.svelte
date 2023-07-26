@@ -18,7 +18,7 @@
 </script>
 
 <label class="swap swap-flip">
-   <input id="langCheck" type="checkbox" bind:checked on:change={handleChange} />
+   <input id="langCheck" aria-label="language" type="checkbox" bind:checked on:change={handleChange} />
    <div class="swap-on">
       <Icon icon="emojione:flag-for-vietnam" class="h-12 w-12" />
    </div>

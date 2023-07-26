@@ -1,8 +1,60 @@
 ---
+import Footer from '@components/NavFoot/Footer.astro';
+import Navbar from '@components/NavFoot/Navbar.astro';
 import Layout from '@layouts/MainLayout.astro';
-import Landing from '@pages/landing.astro';
+import AnimatedStartBtn from '@components/animate/AnimatedStartBtn';
+import '@fontsource/lobster';
+import 'animate.css/animate.min.css';
 ---
 
 <Layout title="Prozekt Resovel">
-   <Landing />
+   <Navbar />
+   <main class="m-auto p-8" transition:name="vietnamtransition">
+      <div class="content-center items-center space-y-4">
+         <div id="mainTitle" class="font-lobster invisible text-6xl font-extrabold md:text-7xl lg:text-8xl">
+            <div id="typed-strings">
+               <p class="md:flex lg:flex font-lobster">
+                  Projezk Vietnam
+                  <span class="hidden md:flex">&nbsp;</span>
+                  <span class="group m-auto">
+                     <span class="grid cursor-default group-hover:hidden">⭐</span>
+                     <span class="hidden cursor-default group-hover:grid">🌟</span>
+                  </span>
+               </p>
+            </div>
+            <span id="startTyped" class="inline-flex md:flex lg:flex"></span>
+         </div>
+         <br />
+         <AnimatedStartBtn client:idle />
+      </div>
+   </main>
+   <Footer />
 </Layout>
+<style type="text/css" is:global>
+   .bg {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' opacity='0.1' fill='none'%3e%3cdefs%3e%3cradialGradient id='a' cx='64' cy='61.6' r='42.1' gradientUnits='userSpaceOnUse'%3e%3cstop offset='0' stop-color='%23ab0000'/%3e%3cstop offset='1' stop-color='%23450000'/%3e%3c/radialGradient%3e%3cradialGradient id='b' cx='64.04' cy='94.58' r='20.5' gradientUnits='userSpaceOnUse'%3e%3cstop offset='0' stop-color='%23cd0000'/%3e%3cstop offset='1' stop-color='%236c0000'/%3e%3c/radialGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' d='M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Z' paint-order='fill'/%3e%3cpath fill='url(%23b)' d='m65.42 75.86 4.6 10.49A2.4 2.4 0 0 0 72 87.78l11.2 1a1.54 1.54 0 0 1 .86 2.64l-8.44 7.09a2.4 2.4 0 0 0-.81 2.35l2.45 11.48a1.54 1.54 0 0 1-2.24 1.63l-9.78-5.73a2.4 2.4 0 0 0-2.43 0l-9.78 5.72a1.55 1.55 0 0 1-2.24-1.62l2.45-11.49a2.41 2.41 0 0 0-.8-2.34L44 91.42c-.91-.89-.4-2.45.86-2.63l11.2-1a2.4 2.4 0 0 0 1.99-1.44l4.6-10.49a1.55 1.55 0 0 1 2.77 0Z'/%3e%3c/svg%3e");
+      background-size: 35rem;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+</style>
+
+<script>
+   import Typed from 'typed.js';
+   setTimeout(() => {
+      var typed = new Typed('#startTyped', {
+         stringsElement: '#typed-strings',
+         typeSpeed: 38,
+         showCursor: false,
+         onBegin: (self) => {
+            const title = document.querySelector('#mainTitle');
+            title.classList.remove('invisible');
+         },
+         onComplete: (self) => {
+            const startButton = document.querySelector('#landingButton');
+            startButton.classList.remove('invisible');
+            startButton.classList.add('animate__animated', 'animate__backInLeft');
+         },
+      });
+   }, 300);
+</script>

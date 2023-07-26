@@ -15,12 +15,15 @@ export default defineConfig({
    site: 'https://prozekt-resovel.vercel.app/',
    experimental: {
       assets: true,
-      redirects: true,
+      viewTransitions: true,
    },
    image: {
       service: sharpImageService(),
    },
-
+   redirects: {
+      '/github': 'https://github.com/CDzungx/Prozekt-Resovel',
+      '/discord': 'https://discordapp.com/users/1088612635219599460',
+   },
    integrations: [
       prefetch(),
       tailwind(),

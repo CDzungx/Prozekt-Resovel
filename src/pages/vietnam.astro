@@ -2,47 +2,14 @@
 import SolidCountdown from '@components/items/SolidCountdown';
 import SideBtns from '@components/NavFoot/SideBtns.astro';
 import Footer from '@components/NavFoot/Footer.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title>Prozekt Vietnam</title>
-      <meta charset="UTF-8" />
-      <meta name="description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="x-icon" href="/favicon.ico" />
-      <meta name="generator" content={Astro.generator} />
-      <script is:inline>
-         document.documentElement.setAttribute('data-theme', localStorage.getItem('data-theme'));
-      </script>
-      <script>
-         import { themeChange } from 'theme-change';
-         themeChange();
-      </script>
-      <style>
-         html {
-            font-family: system-ui, sans-serif;
-         }
-         body code {
-            font-family:
-               Menlo,
-               Monaco,
-               Lucida Console,
-               Liberation Mono,
-               DejaVu Sans Mono,
-               Bitstream Vera Sans Mono,
-               Courier New,
-               monospace;
-         }
-      </style>
-   </head>
-   <body>
-      <div class="loader"></div>
-      <div id="content" class="">
-         <SideBtns />
-         <SolidCountdown client:load />
-      </div>
-      <Footer />
-   </body>
-</html>
+<MainLayout title="Project Vietnam">
+   <div class="loader"></div>
+   <div id="content" class="">
+      <SideBtns />
+      <SolidCountdown client:load />
+   </div>
+   <Footer />
+</MainLayout>

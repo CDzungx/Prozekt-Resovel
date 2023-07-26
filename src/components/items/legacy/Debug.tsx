@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { useStore } from '@nanostores/react';
-import { $dataTheme, $hasClickedStartButton } from '@store/DataStore';
+import { dataTheme, hasClickedStartButton } from '@store/DataStore';
 import { locale } from '@store/i18n';
 import { Client, HydrationProvider } from 'react-hydration-provider';
 
 const Debug = () => {
-   let hasClickedStartButton = useStore($hasClickedStartButton);
-   let dataTheme = useStore($dataTheme);
+   let hasClickedStartBtn = useStore(hasClickedStartButton);
+   let dtTheme = useStore(dataTheme);
    let languageStore = useStore(locale);
    useEffect(() => {
       if (localStorage.getItem('hasClickedStartButton') === 'true') {
-         $hasClickedStartButton.set('true');
+         hasClickedStartButton.set('true');
       }
    }, []);
    return (
@@ -22,10 +22,10 @@ const Debug = () => {
                   <div>
                      <Client>
                         <div className="prose">
-                           <span className="text-lg font-bold">Data-Theme: </span> {dataTheme}
+                           <span className="text-lg font-bold">Data-Theme: </span> {dtTheme}
                         </div>
                         <div className="prose">
-                           <span className="text-lg font-bold">Has Start Button Clicked: </span> {hasClickedStartButton}
+                           <span className="text-lg font-bold">Has Start Button Clicked: </span> {hasClickedStartBtn}
                         </div>
                         <div className="prose">
                            <span className="text-lg font-bold">Language: </span>
