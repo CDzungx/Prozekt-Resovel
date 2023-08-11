@@ -1,15 +1,20 @@
 ---
-import SolidCountdown from '@components/items/SolidCountdown';
+import SolidCountdown from '@components/items/vietnam/SolidCountdown';
 import SideBtns from '@components/NavFoot/SideBtns.astro';
 import Footer from '@components/NavFoot/Footer.astro';
 import MainLayout from '@layouts/MainLayout.astro';
+import VNGDP from '@components/items/vietnam/VNGDP.astro';
 ---
 
 <MainLayout title="Project Vietnam">
-   <div class="loader"></div>
-   <div id="content" class="">
-      <SideBtns />
-      <SolidCountdown client:load />
-   </div>
+   <main>
+      <div id="content" class="">
+         <SideBtns />
+
+         <SolidCountdown client:load />
+
+         <VNGDP />
+      </div>
+   </main>
    <Footer />
 </MainLayout>

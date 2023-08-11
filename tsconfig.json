@@ -23,5 +23,6 @@
          "@assets/*": ["src/assets/*"],
          "@store/*": ["src/store/*"]
       }
-   }
+   },
+   "exclude": ["node_modules", ".astro", ".vercel", ".cache"]
 }

@@ -6,9 +6,6 @@
    function handleChange(event) {
       setting.set(event.target.checked ? 'vi' : 'en');
    }
-   let className;
-   export { className as class };
-
    onMount(() => {
       const lang = localStorage.getItem('locale') || 'en';
       if (lang === 'vi') {

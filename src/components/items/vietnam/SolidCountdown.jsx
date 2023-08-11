@@ -63,7 +63,7 @@ const SolidCountdown = () => {
                      <div class="prose mb-2 font-extrabold sm:prose-lg md:prose-2xl">
                         {countdownValue().countForDate === 30 ? tcd().thongnhat : tcd().quockhanh}
                      </div>
-                     <div class="grid auto-cols-min grid-flow-col justify-center gap-5 self-center text-center">
+                     <div class="grid auto-cols-min grid-flow-col justify-center gap-5 self-center text-center duration-0">
                         <div class="flex flex-col">
                            <span class="countdown justify-center font-mono text-4xl md:text-5xl">
                               {countdownValue().days >= 100 ? (

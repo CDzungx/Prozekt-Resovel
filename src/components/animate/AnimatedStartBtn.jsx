@@ -3,7 +3,6 @@ import { hasClickedStartButton } from '@store/DataStore';
 import { Client, HydrationProvider } from 'react-hydration-provider';
 import { NavFootContent } from '@store/translations/en';
 import { useStore } from '@nanostores/react';
-import '@fontsource/paytone-one';
 
 function redirect() {
    fetch('/vietnam').then(() => {

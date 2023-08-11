@@ -11,6 +11,7 @@ module.exports = {
             ibmplex: ['IBM Plex Mono', 'monospace'],
             slabone: ['Alfa Slab One', 'sans-serif'],
             paytone: ['Paytone One', 'sans-serif'],
+            jbmono: ['JetBrains Mono Variable', 'sans-serif'],
          },
       },
    },

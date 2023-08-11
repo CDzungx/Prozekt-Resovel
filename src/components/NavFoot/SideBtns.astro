@@ -4,12 +4,13 @@ import DarkSwitch from '@components/NavFoot/DarkSwitch';
 import LanguageSelectIcon from '@components/NavFoot/LanguageSelectIcon.svelte';
 ---
 
-<div class="sideBtns relative ml-2 mt-2 md:ml-4 md:mt-4">
-   <div class="backdrop-blur-20 z-[9999] fixed min-w-fit rounded-xl p-3 backdrop-brightness-75 backdrop-opacity-50">
+<div class="sideBtns relative">
+   <div
+      class="fixed z-[9999] ml-2 mt-2 min-w-fit rounded-xl bg-white/30 p-3 backdrop-blur-3xl backdrop-brightness-75 backdrop-opacity-80 backdrop-saturate-200 md:ml-4 md:mt-4">
       <a
          href="/"
          aria-label="Back link"
-         class="hidden md:flex duration-300 ease-in-out hover:scale-110 tooltip tooltip-right"
+         class="tooltip tooltip-right hidden duration-300 ease-in-out hover:scale-110 md:flex"
          data-tip="Back">
          <button aria-label="Back" class="backBtn btn btn-circle">
             <Icon name="mdi:arrow-left-thick" class="flex h-8 w-8" />
@@ -24,7 +25,7 @@ import LanguageSelectIcon from '@components/NavFoot/LanguageSelectIcon.svelte';
       <br />
       <button
          aria-label="Language Switch"
-         class="tooltip tooltip-right flex-wrap duration-300 ease-in-out hover:scale-110 w-12 h-12"
+         class="tooltip tooltip-right h-12 w-12 flex-wrap duration-300 ease-in-out hover:scale-110"
          data-tip="Language">
          <LanguageSelectIcon client:load />
       </button>
