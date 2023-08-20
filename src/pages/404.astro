@@ -1,0 +1,43 @@
+---
+import logo from '@assets/img/404fav.svg';
+import '@fontsource/bungee-shade';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:image" content="/favicon.svg" />
+      <meta property="og:title" content="Prozekt Resovel" />
+      <meta property="og:description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <link rel="icon" type="x-icon" href="/favicon.ico" />
+      <title>404: Not Found</title>
+   </head>
+   <body class="flex h-[100dvh] items-center justify-center bg-stone-900 text-center text-slate-100">
+      <main class="flex h-full w-full flex-col justify-center gap-0 md:flex-row md:gap-10 lg:gap-16">
+         <div class="flex items-center justify-center">
+            <figure class="mb-6 md:mb-0">
+               <img
+                  src={logo.src}
+                  alt="Site Logo"
+                  class="-mt-28 aspect-square h-52 w-52 md:mt-0 md:h-60 md:w-60 lg:h-72 lg:w-72"
+               />
+            </figure>
+         </div>
+         <div class="hidden items-center justify-center md:flex">
+            <div class="h-32 border-2 border-gray-400 lg:h-36"></div>
+         </div>
+         <div class="flex flex-col items-center justify-center">
+            <div class="mb-5 font-bungee text-8xl">404</div>
+            <div class="font-mono text-2xl md:text-3xl">Whatcha doin here eh?</div>
+         </div>
+         <div
+            class="fixed -bottom-32 right-3 flex h-44 w-36 items-center justify-center transition-all duration-300 hover:bottom-0">
+            🤡
+            <br /> Western egg?
+         </div>
+      </main>
+   </body>
+</html>

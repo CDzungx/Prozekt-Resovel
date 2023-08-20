@@ -10,22 +10,22 @@ import LanguageSelectIcon from '@components/NavFoot/LanguageSelectIcon.svelte';
       <a
          href="/"
          aria-label="Back link"
-         class="tooltip tooltip-right hidden duration-300 ease-in-out hover:scale-110 md:flex"
+         class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110"
          data-tip="Back">
          <button aria-label="Back" class="backBtn btn btn-circle">
             <Icon name="mdi:arrow-left-thick" class="flex h-8 w-8" />
          </button>
-         <br />
       </a>
+      <br />
       <div class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110" data-tip="Darkmode">
-         <button aria-label="Darkmode Switch" class="btn btn-circle mb-3 md:my-3">
+         <button aria-label="Darkmode Switch" class="btn btn-circle my-3 md:my-3">
             <DarkSwitch client:load />
          </button>
       </div>
       <br />
       <button
          aria-label="Language Switch"
-         class="tooltip tooltip-right h-12 w-12 flex-wrap duration-300 ease-in-out hover:scale-110"
+         class="tooltip tooltip-right h-12 w-12 duration-300 ease-in-out hover:scale-110"
          data-tip="Language">
          <LanguageSelectIcon client:load />
       </button>

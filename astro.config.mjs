@@ -17,6 +17,11 @@ export default defineConfig({
       assets: true,
       viewTransitions: true,
    },
+   vite: {
+      ssr: {
+         noExternal: ['three'],
+      },
+   },
    image: {
       service: sharpImageService(),
    },
@@ -33,6 +38,8 @@ export default defineConfig({
             ic: ['outline-discord'],
             ph: ['code-fill'],
             emojione: ['flag-for-united-kingdom', 'flag-for-vietnam'],
+            devicon: ['solidjs'],
+            'vscode-icons': ['file-type-astro', 'file-type-svelte', 'file-type-reactjs', 'file-type-tailwind'],
          },
       }),
       sitemap(),
@@ -43,7 +50,7 @@ export default defineConfig({
       svelte(),
    ],
    build: {
-      inlineStylesheets: 'auto',
+      inlineStylesheets: 'always',
    },
    compressHTML: true,
    output: 'hybrid',

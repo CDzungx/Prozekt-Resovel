@@ -1,0 +1,10 @@
+---
+const { text } = Astro.props;
+---
+
+<p class="group relative w-fit">
+   <span>{text}</span>
+   <span
+      class="absolute -bottom-1 left-0 -z-10 hidden h-2 w-0 bg-amber-600 transition-all group-hover:w-full md:inline-block"
+   ></span>
+</p>

@@ -15,3 +15,9 @@ export const NavFootContent = i18n('navcontent', {
    license: 'is licensed under',
    start: 'Get Started',
 });
+export const GDPContent = i18n('gdp', {
+   year: 'Year',
+   billion: 'Billion VND',
+   dsrc: 'Data Source',
+   gdptitle: 'Vietnam GDP',
+});

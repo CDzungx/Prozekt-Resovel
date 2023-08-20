@@ -13,5 +13,11 @@
       "language": "Ngôn ngữ",
       "license": "sử dụng giấy phép",
       "start": "Bắt Đầu"
+   },
+   "gdp": {
+      "year": "Năm",
+      "billion": "Tỷ VNĐ",
+      "dsrc": "Nguồn dữ liệu",
+      "gdptitle": "GDP Việt Nam"
    }
 }

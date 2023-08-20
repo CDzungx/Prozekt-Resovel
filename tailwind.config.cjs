@@ -12,6 +12,7 @@ module.exports = {
             slabone: ['Alfa Slab One', 'sans-serif'],
             paytone: ['Paytone One', 'sans-serif'],
             jbmono: ['JetBrains Mono Variable', 'sans-serif'],
+            bungee: ['Bungee Shade', 'sans-serif'],
          },
       },
    },

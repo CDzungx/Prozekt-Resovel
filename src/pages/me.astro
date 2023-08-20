@@ -1,0 +1,84 @@
+---
+import AdvNavBar from '@components/NavFoot/AdvNavBar.svelte';
+import DarkSwitch from '@components/NavFoot/DarkSwitch';
+import Navbar from '@components/NavFoot/Navbar.astro';
+import SolidCountdown from '@components/items/vietnam/SolidCountdown';
+import '@fontsource-variable/jetbrains-mono';
+import MainLayout from '@layouts/MainLayout.astro';
+---
+
+<MainLayout title="About Me">
+   <AdvNavBar client:load />
+   <main>
+      <div class="w-full h-full relative">
+         <svg xmlns="http://www.w3.org/2000/svg" class="absolute -z-40 top-40" fill="none" viewBox="0 0 1920 1397">
+            <g filter="url(#filter0_i_16_2)">
+               <path
+                  fill="url(#paint0_linear_16_2)"
+                  fill-rule="evenodd"
+                  d="m0 532.343 88.717-56.333c106-68.024 242.98-121.28 372.745-124.357C606.455 348.216 846.5 470.312 1006.5 498.204c308.15 51.276 541.37-394.26 811-479 70-22 102.5-18.5 102.5-18.5V1396c-26.82 4.8-187.07-27.57-391.5-26.5-149.03.78-291.88-16.11-473.5-16.5-207.143-.44-530.53 42.49-707.5 41.5C94.954 1393.08 0 1314 0 1314V532.343Z"
+                  clip-rule="evenodd"></path>
+            </g>
+            <defs>
+               <linearGradient
+                  id="paint0_linear_16_2"
+                  x1="1379.5"
+                  x2="156.5"
+                  y1="-151.296"
+                  y2="456.203"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#363636"></stop>
+                  <stop offset=".081" stop-color="#363636" stop-opacity=".999"></stop>
+                  <stop offset=".155" stop-color="#363636" stop-opacity=".996"></stop>
+                  <stop offset=".225" stop-color="#363636" stop-opacity=".99"></stop>
+                  <stop offset=".29" stop-color="#363636" stop-opacity=".983"></stop>
+                  <stop offset=".353" stop-color="#363636" stop-opacity=".974"></stop>
+                  <stop offset=".412" stop-color="#363636" stop-opacity=".963"></stop>
+                  <stop offset=".471" stop-color="#373737" stop-opacity=".95"></stop>
+                  <stop offset=".529" stop-color="#373737" stop-opacity=".936"></stop>
+                  <stop offset=".588" stop-color="#373737" stop-opacity=".921"></stop>
+                  <stop offset=".647" stop-color="#373737" stop-opacity=".903"></stop>
+                  <stop offset=".71" stop-color="#373737" stop-opacity=".885"></stop>
+                  <stop offset=".775" stop-color="#373737" stop-opacity=".865"></stop>
+                  <stop offset=".845" stop-color="#373737" stop-opacity=".845"></stop>
+                  <stop offset=".919" stop-color="#373737" stop-opacity=".823"></stop>
+                  <stop offset="1" stop-color="#373737" stop-opacity=".8"></stop>
+               </linearGradient>
+               <filter
+                  id="filter0_i_16_2"
+                  width="1935"
+                  height="1405.99"
+                  x="0"
+                  y=".5"
+                  color-interpolation-filters="sRGB"
+                  filterUnits="userSpaceOnUse">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                  <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  ></feColorMatrix>
+                  <feOffset dx="15" dy="10"></feOffset>
+                  <feGaussianBlur stdDeviation="25"></feGaussianBlur>
+                  <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"></feComposite>
+                  <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"></feColorMatrix>
+                  <feBlend in2="shape" result="effect1_innerShadow_16_2"></feBlend>
+               </filter>
+            </defs>
+         </svg>
+
+         <SolidCountdown client:load />
+      </div>
+   </main>
+   <script type="text/javascript"></script>
+</MainLayout>
+<style type="text/css" slot="style">
+   main {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+   }
+   main::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
+   }
+</style>

@@ -1,0 +1,138 @@
+<!--
+TO-DO:
+ - Currency convert USD/VND with API
+ - More detail on click
+>-->
+<div class="flex h-screen">
+   <div
+      class="gdpbox relative z-0 m-auto block h-[50%] w-11/12 justify-center overflow-hidden rounded-md border-4 border-red-950 bg-yellow-500 bg-opacity-10 p-3 shadow-xl md:h-[70%] md:w-9/12 lg:h-[80%] lg:w-8/12">
+      <div id="chartTitle" class="mb-4 mt-2 text-center font-mono text-4xl font-bold">Vietnam GDP</div>
+      <div
+         id="tooltip"
+         class="absolute ml-14 mt-2 hidden h-fit w-fit rounded-md border-2 bg-white bg-opacity-50 p-2 px-2 font-mono text-sm font-bold md:ml-11 md:px-3 md:text-base lg:ml-16 lg:px-4 lg:text-lg">
+         <div id="year"></div>
+         <div id="gdpValue"></div>
+      </div>
+      <div id="chart" class="h-auto w-auto"></div>
+      <div id="srcInfo" class="mt-2 flex items-end justify-between text-sm">
+         <span class="text-left text-xs text-yellow-500">VNGDP - V1.2</span>
+         <span class="text-right">
+            Data Source: <a class="font-semibold underline" href="https://www.gso.gov.vn/" target="_blank">gso.gov.vn</a
+            >
+         </span>
+      </div>
+   </div>
+</div>
+<script>
+   import * as d3 from 'd3';
+
+   let gdpData: [number, number][] = [
+      [1986, 599],
+      [1987, 2870],
+      [1988, 15420],
+      [1989, 28093],
+      [1990, 41955],
+      [1991, 76707],
+      [1992, 110532],
+      [1993, 140258],
+      [1994, 178534],
+      [1995, 228892],
+      [1996, 272036],
+      [1997, 313623],
+      [1998, 361017],
+      [1999, 399942],
+      [2000, 441646],
+      [2001, 481295],
+      [2002, 535762],
+      [2003, 613443],
+      [2004, 715307],
+      [2005, 914001],
+      [2006, 1061565],
+      [2007, 1246769],
+      [2008, 1616047],
+      [2009, 1809149],
+      [2010, 2739843.171962717],
+      [2011, 3539881.312295705],
+      [2012, 4073762.287040809],
+      [2013, 4473655.598642686],
+      [2014, 4937031.677600985],
+      [2015, 5191323.729850147],
+      [2016, 5639401.003262277],
+      [2017, 6293904.553910158],
+      [2018, 7009042.131658485],
+      [2019, 7707200.287051477],
+      [2020, 8044385.729094592],
+      [2021, 8479666.50008789],
+      [2022, 9513327.03282206],
+   ];
+
+   let gdpBox = document.querySelector('.gdpbox') as HTMLElement;
+   let titleh = document.querySelector('#chartTitle') as HTMLElement;
+   let srch = document.querySelector('#srcInfo') as HTMLElement;
+   let styles = window.getComputedStyle(gdpBox);
+   let { padding } = styles;
+   let p = parseFloat(padding);
+   let th = titleh.offsetHeight;
+   let sh = srch.offsetHeight;
+   let h = gdpBox.offsetHeight - th * 3 - sh;
+
+   let svg = d3
+      .select('#chart')
+      .append('svg')
+      .attr('class', 'flex w-full m-auto')
+      .attr('height', h + 2 * p);
+   let w = svg.node().getBoundingClientRect().width - p * 5;
+
+   const xScale = d3.scaleLinear([d3.min(gdpData, (d) => d[0]), d3.max(gdpData, (d) => d[0])], [0, w]);
+   const yScale = d3.scaleLinear([0, d3.max(gdpData, (d) => Number(d[1].toFixed()) / 1000)], [h, 0]);
+
+   svg.append('g')
+      .call(d3.axisLeft(yScale))
+      .attr('class', 'y axis')
+      .attr('transform', 'translate(' + p * 4 + ',0)');
+   svg.append('g')
+      .call(d3.axisLeft(yScale).tickSizeInner(-w))
+      .attr('transform', 'translate(' + p * 4 + ',0)')
+      .attr('class', 'yGrid')
+      .selectAll('g')
+      .selectAll('text')
+      .remove();
+   svg.select('.yGrid').selectAll('g').selectAll('line').attr('class', 'stroke-gray-300');
+
+   svg.selectAll('rect')
+      .data(gdpData)
+      .join('rect')
+      .attr('class', 'peer hover:w fill-green-400 hover:fill-green-800')
+      .attr('width', w / gdpData.length - 1.5)
+      .attr('height', (d) => h)
+      .attr('x', (d, i) => p * 4 + xScale(d[0]) - w / gdpData.length / 2)
+      .attr('y', (d, i) => 0)
+      .attr('data-date', (d, i) => d[0])
+      .attr('data-gdp', (d, i) => d[1])
+      .on('mouseover', (i, d) => {
+         d3.select('#tooltip').attr('data-date', d[0]).attr('data-gdp', d[1]).classed('hidden', false);
+         d3.select('#tooltip').select('#year').text(`Year: ${d[0]}`);
+         d3.select('#tooltip')
+            .select('#gdpValue')
+            .text(`GDP: ${Number(d[1].toFixed(0)).toLocaleString()} Billion VND`);
+      })
+      .on('mouseout', () => {
+         d3.select('body').select('#tooltip').classed('hidden', true);
+      })
+      .attr('mask', (d, i) => {
+         const mask = svg.append('mask').attr('id', `mask-${i}`);
+         mask
+            .append('rect')
+            .attr('width', w / gdpData.length - 1.5)
+            .attr('height', h - yScale(d[1] / 1000))
+            .attr('x', p * 4 + xScale(d[0]) - w / gdpData.length / 2)
+            .attr('y', yScale(Number(d[1]) / 1000))
+            .attr('fill', 'white');
+         return `url(#mask-${i})`;
+      });
+   svg.append('g')
+      .call(d3.axisBottom(xScale))
+      .attr('transform', `translate(${p * 4},${h})`);
+   svg.select('g').transition().duration(500);
+   svg.selectAll('g').selectAll('text').attr('class', 'text-black font-bold text-xs');
+</script>
