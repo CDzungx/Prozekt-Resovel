@@ -34,7 +34,7 @@ export default defineConfig({
       tailwind(),
       icon({
          include: {
-            mdi: ['github', 'arrow-left-thick'],
+            mdi: ['github', 'arrow-left-bold-outline', 'home-outline'],
             ic: ['outline-discord'],
             ph: ['code-fill'],
             emojione: ['flag-for-united-kingdom', 'flag-for-vietnam'],

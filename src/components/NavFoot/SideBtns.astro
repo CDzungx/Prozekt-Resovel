@@ -6,23 +6,33 @@ import LanguageSelectIcon from '@components/NavFoot/LanguageSelectIcon.svelte';
 
 <div class="sideBtns relative">
    <div
-      class="fixed z-[9999] ml-2 mt-2 min-w-fit rounded-xl bg-white/30 p-3 backdrop-blur-3xl backdrop-brightness-75 backdrop-opacity-80 backdrop-saturate-200 md:ml-4 md:mt-4">
+      class="fixed z-[9999] ml-2 mt-2 flex min-w-fit flex-col rounded-xl bg-white/40 p-3 backdrop-blur-3xl backdrop-brightness-75 backdrop-opacity-80 backdrop-saturate-200 md:ml-4 md:mt-4">
       <a
-         href="/"
+         href="/vnlanding"
          aria-label="Back link"
-         class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110"
+         class="tooltip tooltip-right mb-3 hidden duration-300 ease-in-out hover:scale-110 md:flex"
          data-tip="Back">
          <button aria-label="Back" class="backBtn btn btn-circle">
-            <Icon name="mdi:arrow-left-thick" class="flex h-8 w-8" />
+            <Icon name="mdi:arrow-left-bold-outline" class="flex h-8 w-8" />
          </button>
       </a>
-      <br />
+
+      <a
+         href="/"
+         aria-label="Home link"
+         class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110"
+         data-tip="Homepage">
+         <button aria-label="Back" class="backBtn btn btn-circle">
+            <Icon name="mdi:home-outline" class="flex h-8 w-8" />
+         </button>
+      </a>
+
       <div class="tooltip tooltip-right duration-300 ease-in-out hover:scale-110" data-tip="Darkmode">
          <button aria-label="Darkmode Switch" class="btn btn-circle my-3 md:my-3">
             <DarkSwitch client:load />
          </button>
       </div>
-      <br />
+
       <button
          aria-label="Language Switch"
          class="tooltip tooltip-right h-12 w-12 duration-300 ease-in-out hover:scale-110"

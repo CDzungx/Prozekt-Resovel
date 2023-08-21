@@ -70,7 +70,7 @@ const SolidCountdown = () => {
    return (
       <>
          <div class="flex h-screen items-center justify-center">
-            <div class="card mx-5 shadow-2xl drop-shadow-sm lg:mx-0">
+            <div class="card mx-5 shadow-2xl shadow-gray-400 drop-shadow-sm transition-shadow duration-1000 dark:shadow-orange-500  dark:backdrop-brightness-[0.7] lg:mx-0 ">
                <div class="grid grid-flow-row lg:grid-flow-col-dense">
                   <figure class="max-w-xs md:mx-0 md:max-w-sm lg:max-w-xs">
                      <img

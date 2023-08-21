@@ -54,7 +54,7 @@
       svg.selectAll('rect')
          .data(rgdpData)
          .join('rect')
-         .attr('class', 'fill-lime-500 hover:fill-green-800 opacity-90')
+         .attr('class', 'fill-lime-500 dark:fill-green-600 dark:hover:fill-green-400 hover:fill-green-800 opacity-95')
          .attr('width', w / rgdpData.length - 1.5)
          .attr('height', (d) => h)
          .attr('x', (d, i) => p * 4 + xScale(d.year) - w / rgdpData.length / 2)
@@ -86,7 +86,7 @@
          .call(d3.axisBottom(xScale))
          .attr('transform', `translate(${p * 4},${h})`);
       svg.select('g').transition().duration(500);
-      svg.selectAll('g').selectAll('text').attr('class', 'text-black font-bold text-xs');
+      svg.selectAll('g').selectAll('text').attr('class', 'text-black dark:text-white font-bold text-xs');
    });
 </script>
 
@@ -101,7 +101,7 @@ TO-DO:
       <div id="chartTitle" class="mb-4 mt-2 text-center font-mono text-4xl font-bold">{$GDPContent.gdptitle}</div>
       <div
          id="tooltip"
-         class="absolute ml-14 mt-2 hidden h-fit w-fit rounded-md border-2 border-gray-500 bg-white bg-opacity-75 p-2 px-2 font-mono text-sm font-bold md:ml-14 md:px-3 md:text-base lg:ml-16 lg:px-4 lg:text-lg">
+         class="absolute ml-14 mt-2 hidden h-fit w-fit rounded-md border-2 border-gray-500 bg-white bg-opacity-75 p-2 px-2 font-mono text-sm font-bold dark:bg-opacity-90 dark:text-black md:ml-14 md:px-3 md:text-base lg:ml-16 lg:px-4 lg:text-lg">
          <div id="year"></div>
          <div id="gdpValue"></div>
       </div>
@@ -109,7 +109,7 @@ TO-DO:
          <svg class="m-auto flex w-full"> </svg>
       </div>
       <div id="srcInfo" class="mt-2 flex items-end justify-between text-sm">
-         <span class="text-left text-xs text-yellow-900">VNGDP - V1.8</span>
+         <span class="text-left text-xs text-yellow-900 dark:text-yellow-200">VNGDP - V2</span>
          <span class="text-right">
             {$GDPContent.dsrc}:
             <a class="font-semibold underline" href="https://www.gso.gov.vn/" target="_blank">gso.gov.vn</a>

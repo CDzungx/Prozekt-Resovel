@@ -29,7 +29,7 @@ const DarkSwitch = () => {
    });
 
    return (
-      <label aria-label="DarkSwitchLable" class="swap swap-rotate">
+      <label aria-label="DarkSwitchLable" class="swap-rotate swap">
          <input
             id="DarkmodeCheckbox"
             type="checkbox"

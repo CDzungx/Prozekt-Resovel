@@ -11,7 +11,7 @@ import DarkSwitch from '@components/NavFoot/DarkSwitch';
 ---
 
 <Layout title="Prozekt Resovel" transition:name="vnindex" transition:animate="slide">
-   <Navbar><DarkSwitch client:load slot="darkSwitch" /></Navbar>
+   <Navbar><DarkSwitch client:load slot="darkSwitch" transition:persist="darkSwitch" /></Navbar>
    <main class="m-auto p-8" transition:name="vietnamtransition">
       <div class="content-center items-center space-y-4">
          <SVNLanding client:load />

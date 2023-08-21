@@ -27,6 +27,7 @@ module.exports = {
          {
             light: {
                ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
+               'base-100': '#faf7f5',
                '--rounded-btn': '0.6rem',
                '--rounded-lg': '1rem',
             },
@@ -35,7 +36,7 @@ module.exports = {
             dark: {
                ...require('daisyui/src/theming/themes')['[data-theme=business]'],
                neutral: '#242e32',
-               'base-100': '#383429',
+               'base-100': '#343632',
                '--rounded-box': '1rem',
                '--rounded-btn': '0.6rem',
             },

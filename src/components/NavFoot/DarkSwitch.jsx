@@ -10,6 +10,7 @@ const DarkSwitch = () => {
       localStorage.setItem('data-theme', newTheme);
       dataTheme.set(currentThemeValue());
       document.documentElement.setAttribute('data-theme', currentThemeValue());
+      localStorage.setItem('theme', currentThemeValue());
    }
 
    onMount(() => {
@@ -25,6 +26,7 @@ const DarkSwitch = () => {
       if (currentThemeValue() === 'dark') {
          document.getElementById('DarkmodeCheckbox').checked = true;
       }
+      document.documentElement.setAttribute('data-theme', currentThemeValue());
       dataTheme.set(currentThemeValue());
    });
 
