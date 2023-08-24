@@ -1,6 +1,5 @@
 ---
 import AdvNavBar from '@components/NavFoot/AdvNavBar.svelte';
-import DarkSwitch from '@components/NavFoot/DarkSwitch';
 import Navbar from '@components/NavFoot/Navbar.astro';
 import SolidCountdown from '@components/items/vietnam/SolidCountdown';
 import '@fontsource-variable/jetbrains-mono';
@@ -10,8 +9,8 @@ import MainLayout from '@layouts/MainLayout.astro';
 <MainLayout title="About Me">
    <AdvNavBar client:load />
    <main>
-      <div class="w-full h-full relative">
-         <svg xmlns="http://www.w3.org/2000/svg" class="absolute -z-40 top-40" fill="none" viewBox="0 0 1920 1397">
+      <div class="relative h-full w-full">
+         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-40 -z-40" fill="none" viewBox="0 0 1920 1397">
             <g filter="url(#filter0_i_16_2)">
                <path
                   fill="url(#paint0_linear_16_2)"

@@ -1,17 +1,21 @@
 ---
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
 const { title } = Astro.props;
+import thumbnail from '@assets/img/thumbnail.png';
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
       <meta name="description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:image" content="/favicon.svg" />
+      <meta property="og:url" content="https://prozekt-resovel.vercel.app" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Prozekt Resovel" />
       <meta property="og:title" content="Prozekt Resovel" />
       <meta property="og:description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <meta property="og:image" content={thumbnail.src} />
       <link rel="icon" type="x-icon" href="/favicon.ico" />
       <meta name="view-transition" content="same-origin" />
       <meta name="generator" content={Astro.generator} />
@@ -35,6 +39,5 @@ const { title } = Astro.props;
             z-index: 99999;
          }
       </style>
-      <slot name="style" />
    </body>
 </html>
