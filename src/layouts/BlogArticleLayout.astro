@@ -1,15 +1,16 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import SmoothScroll from '@components/items/misc/SmoothScrollSolid';
-const { title } = Astro.props;
-import thumbnail from '@assets/img/thumbnail.png';
+import SmoothScrollSolid from '@components/items/misc/SmoothScrollSolid';
+import Navbar from '@components/NavFoot/Navbar.astro';
+import FooterButLarger from '@components/NavFoot/FooterButLarger.astro';
+const { title, description, thumbnail } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <meta name="description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:url" content="https://prozekt-resovel.vercel.app" />
       <meta property="og:type" content="website" />
@@ -32,7 +33,17 @@ import thumbnail from '@assets/img/thumbnail.png';
       </script>
    </head>
    <body class="bg mb-auto flex min-h-[100dvh] flex-col">
-      <slot />
+      <div class="sticky -top-0 z-50 -translate-y-1 px-0 md:px-4 lg:px-8">
+         <div class="rounded-none backdrop-blur-xl backdrop-brightness-90 md:rounded-lg">
+            <Navbar />
+         </div>
+      </div>
+      <main
+         class="mx-5 my-10 mb-28 inline-block h-fit grid-cols-11 gap-10 md:ml-12 md:mr-0 md:grid lg:ml-28"
+         transition:name="BlogCard">
+         <slot />
+      </main>
+      <FooterButLarger />
       <style type="text/css" is:global>
          html {
             transition-duration: 200ms;
@@ -63,6 +74,6 @@ import thumbnail from '@assets/img/thumbnail.png';
             pointer-events: none;
          }
       </style>
-      <SmoothScroll client:load />
+      <SmoothScrollSolid client:load />
    </body>
 </html>

@@ -10,7 +10,7 @@ function redirect() {
          window.location.href = '/vietnam';
       });
    });
-   localStorage.setItem('hasClickedStartButton', 'true');
+   localStorage?.setItem('hasClickedStartButton', 'true');
    hasClickedStartButton.set('true');
 }
 

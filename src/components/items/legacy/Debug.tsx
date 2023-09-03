@@ -9,7 +9,7 @@ const Debug = () => {
    let dtTheme = useStore(dataTheme);
    let languageStore = useStore(locale);
    useEffect(() => {
-      if (localStorage.getItem('hasClickedStartButton') === 'true') {
+      if (localStorage?.getItem('hasClickedStartButton') === 'true') {
          hasClickedStartButton.set('true');
       }
    }, []);

@@ -1,9 +1,9 @@
 ---
-import SolidCountdown from '@components/items/vietnam/SolidCountdown';
+import SolidCountdown from '@components/items/pages/vietnam/SolidCountdown';
+import VNGDPSvelte from '@components/items/pages/vietnam/VNGDPSvelte.svelte';
 import SideBtns from '@components/NavFoot/SideBtns.astro';
 import Footer from '@components/NavFoot/Footer.astro';
 import MainLayout from '@layouts/MainLayout.astro';
-import VNGDPSvelte from '@components/items/vietnam/VNGDPSvelte.svelte';
 ---
 
 <MainLayout title="Project Vietnam">
@@ -16,39 +16,5 @@ import VNGDPSvelte from '@components/items/vietnam/VNGDPSvelte.svelte';
          <VNGDPSvelte client:load />
       </div>
    </main>
-   <Footer />
+   <Footer transition:persist="footer" />
 </MainLayout>
-<script>
-   import Lenis from '@studio-freight/lenis';
-   const lenis = new Lenis();
-
-   lenis.on('scroll', (e: any) => {});
-
-   function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-   }
-
-   requestAnimationFrame(raf);
-</script>
-<style is:global>
-   html.lenis {
-      height: auto;
-   }
-
-   .lenis.lenis-smooth {
-      scroll-behavior: auto;
-   }
-
-   .lenis.lenis-smooth [data-lenis-prevent] {
-      overscroll-behavior: contain;
-   }
-
-   .lenis.lenis-stopped {
-      overflow: hidden;
-   }
-
-   .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-   }
-</style>

@@ -3,24 +3,24 @@
 import { createSignal, onMount } from 'solid-js';
 import { dataTheme } from '@store/DataStore';
 const DarkSwitch = () => {
-   const [currentThemeValue, setCurrentTheme] = createSignal(localStorage.getItem('data-theme') || 'light');
+   const [currentThemeValue, setCurrentTheme] = createSignal(localStorage?.getItem('data-theme') || 'light');
    function handleCheckboxChange(event) {
       const newTheme = event.target.checked ? 'dark' : 'light';
       setCurrentTheme(newTheme);
-      localStorage.setItem('data-theme', newTheme);
+      localStorage?.setItem('data-theme', newTheme);
       dataTheme.set(currentThemeValue());
       document.documentElement.setAttribute('data-theme', currentThemeValue());
-      localStorage.setItem('theme', currentThemeValue());
+      localStorage?.setItem('theme', currentThemeValue());
    }
 
    onMount(() => {
       const isThemeChange =
          window.matchMedia &&
          window.matchMedia('(prefers-color-scheme: dark)').matches &&
-         localStorage.getItem('data-theme') === null;
+         localStorage?.getItem('data-theme') === null;
       if (isThemeChange) {
          setCurrentTheme('dark');
-         localStorage.setItem('data-theme', 'dark');
+         localStorage?.setItem('data-theme', 'dark');
          document.getElementById('DarkmodeCheckbox').checked = true;
       }
       if (currentThemeValue() === 'dark') {
@@ -31,7 +31,7 @@ const DarkSwitch = () => {
    });
 
    return (
-      <label aria-label="DarkSwitchLable" class="swap swap-rotate">
+      <label aria-label="DarkSwitchLable" class="swap swap-rotate h-full w-12">
          <input
             id="DarkmodeCheckbox"
             type="checkbox"

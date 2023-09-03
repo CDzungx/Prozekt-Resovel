@@ -1,0 +1,34 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+   headers: MarkdownHeading[];
+   maxDepth: number;
+}
+
+const { headers, maxDepth } = Astro.props;
+const filteredHeaders = headers.filter((header) => header.depth > 1 && header.depth < maxDepth + 1);
+---
+
+<div
+   class="static top-28 rounded-lg border-2 border-base-300 bg-base-200 p-5 px-0 transition-colors duration-300 md:sticky md:border-0 md:px-5 md:pb-7">
+   <span class="mb-2 flex justify-center text-2xl font-extrabold">Table of Content</span>
+   <nav class="mt-1 text-base md:mt-3">
+      <ul>
+         {
+            filteredHeaders.map((header) => (
+               <>
+                  <li class="relative list-none pt-0 md:pt-2" style={`margin-left: ${(header.depth - 2) * 20}px`}>
+                     {header.depth === 3 && (
+                        <span class="absolute -left-2 -top-2 h-[150%] w-1 border-l-2 border-gray-400 md:top-0 md:h-[110%]" />
+                     )}
+                     <a class="font-semibold hover:font-bold hover:underline" href={`#${header.slug}`}>
+                        {header.text}
+                     </a>
+                  </li>
+               </>
+            ))
+         }
+      </ul>
+   </nav>
+</div>

@@ -1,3 +1,5 @@
+/** @jsxImportSource react */
+
 import { motion } from 'framer-motion';
 import { hasClickedStartButton } from '@store/DataStore';
 import { Client, HydrationProvider } from 'react-hydration-provider';
@@ -10,7 +12,7 @@ function redirect() {
          window.location.href = '/vietnam';
       });
    });
-   localStorage.setItem('hasClickedStartButton', 'true');
+   localStorage?.setItem('hasClickedStartButton', 'true');
    hasClickedStartButton.set('true');
 }
 

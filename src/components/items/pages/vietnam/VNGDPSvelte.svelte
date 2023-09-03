@@ -109,8 +109,8 @@ TO-DO:
          <svg class="m-auto flex w-full"> </svg>
       </div>
       <div id="srcInfo" class="mt-2 flex items-end justify-between text-sm">
-         <span class="text-left text-xs text-yellow-900 dark:text-yellow-200">VNGDP - V2</span>
-         <span class="text-right">
+         <span class="text-xs text-yellow-900 dark:text-yellow-200">VNGDP - V2</span>
+         <span>
             {$GDPContent.dsrc}:
             <a class="font-semibold underline" href="https://www.gso.gov.vn/" target="_blank">gso.gov.vn</a>
          </span>

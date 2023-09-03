@@ -1,7 +1,9 @@
+/** @jsxImportSource solid-js */
+
 import { createI18n, localeFrom, browser, formatter } from '@nanostores/i18n';
 import { persistentAtom } from '@nanostores/persistent';
-export const setting = persistentAtom('locale', localStorage.getItem('lang') || 'en');
 
+export const setting = persistentAtom('locale');
 export const locale = localeFrom(
    setting, // User’s locale from localStorage
    browser({

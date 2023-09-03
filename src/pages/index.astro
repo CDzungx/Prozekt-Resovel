@@ -9,13 +9,13 @@ import DarkSwitch from '@components/NavFoot/DarkSwitch';
 import MainLayout from '@layouts/MainLayout.astro';
 ---
 
-<!doctype html>
 <MainLayout title="Prozekt Resovel">
-   <main class="relative h-full w-screen bg-center">
+   <main class="flex w-screen flex-1 bg-center">
       <div class="absolute right-6 top-5">
-         <DarkSwitch client:load transition:persist="darkSwitch" />
+         <DarkSwitch client:only="solid-js" />
       </div>
-      <div class="flex h-full flex-col md:grid md:grid-cols-8 md:grid-rows-1">
+
+      <div class="flex w-full flex-col items-stretch md:grid md:grid-cols-8 md:grid-rows-1">
          <div
             class="col-span-5 flex flex-col items-center justify-center bg-orange-700 pb-14 pt-20 text-center font-carter text-6xl font-extrabold text-base-100 dark:bg-orange-900 dark:text-base-content md:pb-0 md:pt-0 md:text-7xl lg:text-8xl">
             <span id="title" data-textify>Prozekt Resovel</span>
@@ -33,7 +33,7 @@ import MainLayout from '@layouts/MainLayout.astro';
             class="subbg col-span-3 flex h-full items-center justify-center bg-center font-carter text-3xl font-bold text-orange-800 dark:text-orange-100/100 md:text-4xl">
             <ul transition:name="vnindex" transition:animate="slide">
                <li class="w-fit">
-                  <a href="/vnlanding"><UnderlineText text="Project Vietnam" /></a>
+                  <a href="/vietnam"><UnderlineText text="Project Vietnam" /></a>
                </li>
                <li class="my-8 w-fit">
                   <a href="/blog"><UnderlineText text="Blog" /></a>

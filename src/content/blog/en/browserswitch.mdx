@@ -1,0 +1,164 @@
+---
+title: 'Why I switched from Brave to Firefox'
+date: 2023-09-02
+description: 'My journey with browsers.'
+language: en
+cover: '../assets/browserswitch/brnff.png'
+tags: ['browser']
+---
+
+import HorizontalBarChart from '@components/items/pages/blog/HorizontalBarChart.svelte';
+import viewTransitionVideo from '../assets/browserswitch/ViewTransitions.mp4';
+
+I'd been using Brave for years, ever since it was released. I also tried Firefox without migrating my data from Brave, but I returned to Brave after a few days because I needed my browser history. I did a full data migration from Brave to Firefox to give it another try after Firefox version 116 added a volume slider to its built-in PiP (Picture-in-Picture) feature.
+
+I've been using Firefox _Nightly_ for two months now. I'll tell you about my experience with the browser's nightly build. And we don't talk about crappy Chrome here, I uninstalled it from my computer.
+
+## Why Firefox?
+
+-  Better [uBlock Origin](https://github.com/gorhill/uBlock) support. ([Documentation](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox))
+-  Built-in Picture-in-picture (PiP) support.
+-  Built-in page screen capture feature.
+-  [Firefox Relay](https://relay.firefox.com/) - A mail spoofing service.
+-  Looking for a new experience.
+
+## Data Migration
+
+It wasn't easy switching from Brave to Firefox, it took me some time to research how to migrate my data.
+
+### History Migrate
+
+Firefox does not officially support history import from Brave (and I believe no other browser does). Through internet research, I was able to find a solution. Since Brave and the new Edge both use Chromium, I can manually copy Brave's history to Edge. I could then import my Edge history to Firefox because Firefox supports importing history from Edge. _Of course you can use Chrome to do the same._
+
+<details>
+   <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
+
+      **Step 1: Copy Brave's history to Edge/Chrome.**
+      - Open _Run_: <kbd class="kbd">Windows ⌘</kbd> + <kbd class="kbd">R</kbd>
+      - Type: `%appdata%` then press OK
+      ![Run window.](../assets/browserswitch/runwindow.webp)
+      - A new File Explorer open, if you're in the _Roaming_ folder, click _AppData_ then go to _Local_ folder.
+      ![Roaming](../assets/browserswitch/roaming.webp)
+      - Open _BraveSoftware_ > _Brave_Browser_ (_Brave_Browser-Beta_ if you're using Beta) > _User Data_
+      - Copy `History` and `History-journal` file
+      ![History Files](../assets/browserswitch/historyfile.webp)
+      - Now go back to _Local_ folder, go to _Edge_ (Chromium Edge) User Data folder: _Microsoft_ > _Edge_ > _User Data_ then paste the copied history files.
+
+      **Step 2: Import Edge's history to Firefox.**
+      - Open _Firefox_ > _Settings_ > _General_ > _Import Browser Data_ > _Import Data_ > Select _Microsoft Edge - Profile_, tick _Select All_ option > Import.
+
+</details>
+### Account & Passwords Migrate
+Lastest version of Firefox supports importing passwords from .csv file which is pretty easy to migrate.
+    
+<details>
+   <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
+
+      **Step 1: Export Brave passwords.**
+      - Open _Brave_ > _Settings_ > _Autofill & Passwords_, at the _Saved Passwords_ section click <kbd class="kbd">⫶</kbd> then click `Export Passwords`
+
+      **Step 2: Import passwords file to Firefox.**
+      - Open _Firefox_ > <kbd class="kbd">☰</kbd> _Menu_  > _Passwords_ > <kbd class='kbd'>⋯</kbd> _Options_ > _Import from a File..._ > Select exported `Passwords.csv`
+
+     > Remember to delete the `Passwords.csv` file.
+
+</details>
+### Bookmarks Migrate
+Almost the same steps as exporting/importing passwords.
+
+<details>
+   <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
+
+      **Step 1: Export Brave bookmarks.**
+      - Open _Brave_ > <kbd class="kbd">Ctrl</kbd> + <kbd class="kbd">Shift</kbd> + <kbd class="kbd">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Export Bookmarks_
+
+      **Step 2: Import bookmarks file in Firefox.**
+      - Open _Firefox_ > <kbd class="kbd">Ctrl</kbd> + <kbd class="kbd">Shift</kbd> + <kbd class="kbd">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Import and Backup_ > _Import Bookmarks from HTML..._ > Select exported `Bookmarks.html`
+
+</details>
+
+## Firefox "Nice To Have" Features
+
+### Built-in Picture-in-Picture
+
+This is a standout feature of Firefox. If you want to use this on any Chromium browser, you'll need to install an extension with limited functionality.
+While you can only play/pause with Chromium Picture-in-Picture, with Firefox, you can backward/forward, change the volume, use the subtitles.
+![PiP](../assets/browserswitch/PiP.webp)
+
+### Built-in Screenshot
+
+I recently discovered that Chrome also has a [built-in screenshot feature](https://zapier.com/blog/full-page-screenshots-in-chrome/), but its usage is complicated. How about Firefox? Let's take a look:
+
+-  Right-click on the toolbar, click _Customize Toolbar_, you can then drag the _Screenshot_ button to the toolbar to start using it.
+   ![Toolbar](../assets/browserswitch/ToolbarMag.webp)
+
+Go to a website, click on the _Screenshot_ button. Now you can:
+
+-  Screenshot full page (even it's longggg)
+-  Screenshot current visible area
+-  Drag & drop to capture only selected area.
+-  Click on a component to capture only the component.
+
+## Why (may) I switch back to Brave?
+
+**Firefox currently having some issues:**
+
+-  Worse performance
+-  No View Transitions API
+-  Lack of extensions (add-ons)
+
+### Performance
+
+These are some of the results I got when I ran tests on Firefox (_116_), Firefox Nightly (_118a1_), Brave Beta (_v1.58.106, Chromium 116_), Microsoft Edge (_116.0.1938.62_) on my computer:
+
+<HorizontalBarChart
+   chartTitle="BaseMark Score"
+   dataArr={[805, 984, 1213, 1382]}
+   arrName={['Firefox', 'Firefox Nightly', 'Brave Beta', 'Microsoft Edge']}
+   chartNote="The higher, the better."
+   client:load
+/>
+<br />
+<HorizontalBarChart
+   chartTitle="Speedometer Score"
+   dataArr={[196, 221, 372, 387]}
+   arrName={['Firefox', 'Firefox Nightly', 'Brave Beta', 'Microsoft Edge']}
+   chartNote="The higher, the better."
+   client:load
+/>
+<br />
+
+<HorizontalBarChart
+   chartTitle="JetStream2 Score"
+   dataArr={[136, 153, 223, 222]}
+   arrName={['Firefox', 'Firefox Nightly', 'Brave Beta', 'Microsoft Edge']}
+   chartNote="The higher, the better."
+   client:load
+/>
+
+➡️ Clearly, Firefox Nightly 118 has some improvements to Firefox 116 in terms of performance, but it can't still beat Brave and Edge when their scores is much higher.
+
+### View Transitions API
+
+This newly available technology allows browsers to create a nice animation/transition effect when the user navigates between pages.\
+👉 Check out the [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility).
+
+Now, let's take a look at a transition on my website:
+
+<video
+   class="w-full rounded border-2 border-gray-700 dark:border-gray-200 md:w-2/3"
+   playsinline
+   disablepictureinpicture
+   controlslist="play noremoteplayback noplaybackrate foobar"
+   controls>
+   <source src={viewTransitionVideo} type="video/mp4" />
+</video>
+
+### Extensions
+
+There are many extensions available for Chromium browsers, but because Firefox has a different core, developers have to create a separate extension (add-on) for Firefox.\
+And, as you may know, Chrome in particular, and Chromium browsers in general, have the most users (>65% of web browser usage), which means a larger community for extension developers.
+
+## Conclusion
+
+No conclusion, choice is on ya. I'll stay with Firefox because it has features I need, and Brave BAT makes no sense in my country.

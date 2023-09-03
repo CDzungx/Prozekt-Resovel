@@ -7,7 +7,7 @@
       setting.set(event.target.checked ? 'vi' : 'en');
    }
    onMount(() => {
-      const lang = localStorage.getItem('locale') || 'en';
+      const lang = localStorage?.getItem('locale') || 'en';
       if (lang === 'vi') {
          checked = true;
       }
@@ -20,6 +20,6 @@
       <Icon icon="emojione:flag-for-vietnam" class="h-12 w-12" />
    </div>
    <div class="swap-off">
-      <Icon icon="emojione:flag-for-united-kingdom" class="w-12 h-12" />
+      <Icon icon="emojione:flag-for-united-kingdom" class="h-12 w-12" />
    </div>
 </label>

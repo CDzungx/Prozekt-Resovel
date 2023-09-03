@@ -4,7 +4,7 @@
    import { locale } from '@store/i18n';
 
    onMount(() => {
-      if (localStorage.getItem('hasClickedStartButton') === 'true') {
+      if (localStorage?.getItem('hasClickedStartButton') === 'true') {
          hasClickedStartButton.set('true');
       }
    });

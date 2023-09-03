@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import solidJs from '@astrojs/solid-js';
 import prefetch from '@astrojs/prefetch';
@@ -7,23 +7,18 @@ import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel/serverless';
 import robotsTxt from 'astro-robots-txt';
-import compress from 'astro-compress';
+import Compress from 'astro-compress';
 import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
    site: 'https://prozekt-resovel.vercel.app/',
-   experimental: {
-      assets: true,
-      viewTransitions: true,
-   },
+
    vite: {
       ssr: {
          noExternal: ['three'],
       },
-   },
-   image: {
-      service: sharpImageService(),
    },
    redirects: {
       '/github': 'https://github.com/CDzungx/Prozekt-Resovel',
@@ -44,18 +39,16 @@ export default defineConfig({
       }),
       sitemap(),
       robotsTxt(),
-      compress(),
       react(),
       solidJs(),
       svelte(),
+      mdx(),
+      Compress(),
    ],
-   build: {
-      inlineStylesheets: 'always',
-   },
-   compressHTML: true,
+
    output: 'hybrid',
    adapter: vercel({
       analytics: true,
-      split: true,
+      functionPerRoute: true,
    }),
 });

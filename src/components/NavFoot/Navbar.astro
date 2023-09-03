@@ -2,6 +2,7 @@
 import LanguageSelectDropdown from '@components/NavFoot/LanguageSelectDropdown.svelte';
 import LanguageSelectSwitch from '@components/NavFoot/LanguageSelectSwitch.svelte';
 import '@fontsource/carter-one';
+import DarkSwitch from './DarkSwitch';
 ---
 
 <nav class="navbar my-1 rounded-lg p-3 font-carter md:my-2 md:px-5 lg:my-3 lg:px-6">
@@ -45,10 +46,10 @@ import '@fontsource/carter-one';
    </div>
 
    <div class="navbar-end">
-      <LanguageSelectDropdown client:load />
+      <LanguageSelectDropdown client:only="svelte" />
       <div class="divider divider-horizontal hidden md:flex lg:flex"></div>
       <div class="btn btn-ghost mr-1 px-1 md:mr-2">
-         <slot name="darkSwitch" />
+         <DarkSwitch client:only="solid-js" />
       </div>
    </div>
 </nav>

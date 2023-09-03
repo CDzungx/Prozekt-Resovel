@@ -1,0 +1,52 @@
+---
+import TableOfContent from '@components/items/pages/blog/TableOfContent.astro';
+import BlogArticleLayout from '@layouts/BlogArticleLayout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+   const pages = await getCollection('blog');
+
+   const paths = pages.map((page) => {
+      const [lang, ...slug] = page.slug.split('/');
+      return { params: { lang, slug: slug.join('/') || undefined }, props: page };
+   });
+
+   return paths;
+}
+
+const { lang, slug } = Astro.params;
+const page = Astro.props;
+const formattedDate = page.data.date.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
+
+if (page.data.update) {
+   var updateDate = page.data.update.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+const { Content, headings } = await page.render();
+---
+
+<BlogArticleLayout title={page.data.title} description={page.data.description} thumbnail={page.data.cover}>
+   <div class="col-span-8 mx-0 md:mx-3">
+      <Image transition:name="BlogImage" src={page.data.cover} alt={page.data.coverAlt} class="mb-6 rounded-md" />
+      <div class="prose prose-lg m-0 max-w-none font-verdana md:font-sans">
+         <h1 class="mb-2 text-4xl md:text-5xl" transition:name="BlogTitle">{page.data.title}</h1>
+         <p class="my-0 flex flex-col justify-normal md:flex-row md:justify-between">
+            <span>
+               ✍️&nbsp;<span class="font-bold">{page.data.author}</span>
+            </span>
+            <span>
+               🗓️&nbsp;{formattedDate}
+               <br />
+               {page.data.update && <span class="">Last update:&nbsp;</span>}{updateDate}
+            </span>
+         </p>
+         <div class="mt-5 block md:hidden" transition:animate="initial">
+            <TableOfContent headers={headings} maxDepth={page.data.maxDepthTOC || 4} />
+         </div>
+         <Content />
+      </div>
+   </div>
+   <div class="col-span-3 hidden md:block" transition:animate="slide">
+      <TableOfContent headers={headings} maxDepth={page.data.maxDepthTOC || 4} />
+   </div>
+</BlogArticleLayout>

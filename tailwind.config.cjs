@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,mdoc,svelte,ts,tsx,vue}'],
@@ -13,6 +14,44 @@ module.exports = {
             paytone: ['Paytone One', 'sans-serif'],
             jbmono: ['JetBrains Mono Variable', 'sans-serif'],
             bungee: ['Bungee Shade', 'sans-serif'],
+            lato: ['Lato', 'sans-serif'],
+            helvetica: ['Helvetica', 'sans-serif'],
+            verdana: ['Verdana', 'sans-serif'],
+            times: ['Times New Roman', 'serif'],
+         },
+
+         typography: {
+            DEFAULT: {
+               css: {
+                  a: {
+                     'font-weight': '500',
+                  },
+                  /**
+                  h1: {
+                     background: '#780000',
+                     background: 'linear-gradient(to top right, #780000 0%, #C94F1A 100%)',
+                     '-webkit-background-clip': 'text',
+                     '-webkit-text-fill-color': 'transparent',
+                  },
+                  h2: {
+                     background: '#910000',
+                     background: 'linear-gradient(to left, #910000 0%, #5E250C 100%)',
+                     '-webkit-background-clip': 'text',
+                     '-webkit-text-fill-color': 'transparent',
+                     width: 'fit-content',
+                     'margin-bottom': '1.25rem !important',
+                  },
+                  h3: {
+                     background: '#610000',
+                     background: 'linear-gradient(to right, #610000 0%, #8A3612 100%)',
+                     '-webkit-background-clip': 'text',
+                     '-webkit-text-fill-color': 'transparent',
+                     width: 'fit-content',
+                     'margin-bottom': '0.5rem !important',
+                  },
+                  */
+               },
+            },
          },
       },
    },
@@ -39,20 +78,6 @@ module.exports = {
                'base-100': '#343632',
                '--rounded-box': '1rem',
                '--rounded-btn': '0.6rem',
-            },
-         },
-         {
-            red: {
-               ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
-               '--rounded-btn': '0.6rem',
-               '--rounded-lg': '1rem',
-            },
-         },
-         {
-            darkred: {
-               ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
-               '--rounded-btn': '0.6rem',
-               '--rounded-lg': '1rem',
             },
          },
       ],
