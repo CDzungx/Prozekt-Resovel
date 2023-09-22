@@ -75,7 +75,7 @@ module.exports = {
             dark: {
                ...require('daisyui/src/theming/themes')['[data-theme=business]'],
                neutral: '#242e32',
-               'base-100': '#343632',
+               'base-100': '#272824',
                '--rounded-box': '1rem',
                '--rounded-btn': '0.6rem',
             },

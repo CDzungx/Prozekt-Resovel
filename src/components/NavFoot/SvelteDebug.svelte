@@ -1,13 +1,6 @@
 <script>
-   import { onMount } from 'svelte';
-   import { dataTheme, hasClickedStartButton } from '@store/DataStore';
+   import { dataTheme } from '@store/DataStore';
    import { locale } from '@store/i18n';
-
-   onMount(() => {
-      if (localStorage?.getItem('hasClickedStartButton') === 'true') {
-         hasClickedStartButton.set('true');
-      }
-   });
 </script>
 
 <dialog id="debugModal" class="modal">
@@ -18,10 +11,7 @@
             <span class="text-lg font-bold">Data-Theme: </span>
             {$dataTheme}
          </div>
-         <div class="prose">
-            <span class="text-lg font-bold">Has Start Button Clicked: </span>
-            {$hasClickedStartButton}
-         </div>
+
          <div class="prose">
             <span class="text-lg font-bold">Language: </span>
             {$locale === 'vi' ? 'Tiếng Việt' : 'English'}

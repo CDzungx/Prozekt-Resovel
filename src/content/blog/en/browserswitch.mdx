@@ -8,7 +8,6 @@ tags: ['browser']
 ---
 
 import HorizontalBarChart from '@components/items/pages/blog/HorizontalBarChart.svelte';
-import viewTransitionVideo from '../assets/browserswitch/ViewTransitions.mp4';
 
 I'd been using Brave for years, ever since it was released. I also tried Firefox without migrating my data from Brave, but I returned to Brave after a few days because I needed my browser history. I did a full data migration from Brave to Firefox to give it another try after Firefox version 116 added a volume slider to its built-in PiP (Picture-in-Picture) feature.
 
@@ -34,7 +33,7 @@ Firefox does not officially support history import from Brave (and I believe no 
    <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
 
       **Step 1: Copy Brave's history to Edge/Chrome.**
-      - Open _Run_: <kbd class="kbd">Windows ⌘</kbd> + <kbd class="kbd">R</kbd>
+      - Open _Run_: <kbd class="kbd text-base-content">Windows ⌘</kbd> + <kbd class="kbd text-base-content">R</kbd>
       - Type: `%appdata%` then press OK
       ![Run window.](../assets/browserswitch/runwindow.webp)
       - A new File Explorer open, if you're in the _Roaming_ folder, click _AppData_ then go to _Local_ folder.
@@ -55,10 +54,10 @@ Lastest version of Firefox supports importing passwords from .csv file which is 
    <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
 
       **Step 1: Export Brave passwords.**
-      - Open _Brave_ > _Settings_ > _Autofill & Passwords_, at the _Saved Passwords_ section click <kbd class="kbd">⫶</kbd> then click `Export Passwords`
+      - Open _Brave_ > _Settings_ > _Autofill & Passwords_, at the _Saved Passwords_ section click <kbd class="kbd text-base-content">⫶</kbd> then click `Export Passwords`
 
       **Step 2: Import passwords file to Firefox.**
-      - Open _Firefox_ > <kbd class="kbd">☰</kbd> _Menu_  > _Passwords_ > <kbd class='kbd'>⋯</kbd> _Options_ > _Import from a File..._ > Select exported `Passwords.csv`
+      - Open _Firefox_ > <kbd class="kbd text-base-content">☰</kbd> _Menu_  > _Passwords_ > <kbd class='kbd'>⋯</kbd> _Options_ > _Import from a File..._ > Select exported `Passwords.csv`
 
      > Remember to delete the `Passwords.csv` file.
 
@@ -70,10 +69,10 @@ Almost the same steps as exporting/importing passwords.
    <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Steps</summary>
 
       **Step 1: Export Brave bookmarks.**
-      - Open _Brave_ > <kbd class="kbd">Ctrl</kbd> + <kbd class="kbd">Shift</kbd> + <kbd class="kbd">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Export Bookmarks_
+      - Open _Brave_ > <kbd class="kbd text-base-content">Ctrl</kbd> + <kbd class="kbd text-base-content">Shift</kbd> + <kbd class="kbd text-base-content">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Export Bookmarks_
 
       **Step 2: Import bookmarks file in Firefox.**
-      - Open _Firefox_ > <kbd class="kbd">Ctrl</kbd> + <kbd class="kbd">Shift</kbd> + <kbd class="kbd">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Import and Backup_ > _Import Bookmarks from HTML..._ > Select exported `Bookmarks.html`
+      - Open _Firefox_ > <kbd class="kbd text-base-content">Ctrl</kbd> + <kbd class="kbd text-base-content">Shift</kbd> + <kbd class="kbd text-base-content">O</kbd> > <kbd class='kbd'>⋯</kbd> _Options_ > _Import and Backup_ > _Import Bookmarks from HTML..._ > Select exported `Bookmarks.html`
 
 </details>
 
@@ -99,9 +98,9 @@ Go to a website, click on the _Screenshot_ button. Now you can:
 -  Drag & drop to capture only selected area.
 -  Click on a component to capture only the component.
 
-## Why (may) I switch back to Brave?
+## Firefox Issues
 
-**Firefox currently having some issues:**
+**Firefox is currently having some issues:**
 
 -  Worse performance
 -  No View Transitions API
@@ -136,7 +135,7 @@ These are some of the results I got when I ran tests on Firefox (_116_), Firefox
    client:load
 />
 
-➡️ Clearly, Firefox Nightly 118 has some improvements to Firefox 116 in terms of performance, but it can't still beat Brave and Edge when their scores is much higher.
+➡️ Clearly, Firefox Nightly 118 has some improvements to Firefox 116 in terms of performance, but it can't still beat Brave and Edge when their scores are much higher.
 
 ### View Transitions API
 
@@ -145,20 +144,20 @@ This newly available technology allows browsers to create a nice animation/trans
 
 Now, let's take a look at a transition on my website:
 
-<video
-   class="w-full rounded border-2 border-gray-700 dark:border-gray-200 md:w-2/3"
-   playsinline
-   disablepictureinpicture
-   controlslist="play noremoteplayback noplaybackrate foobar"
-   controls>
-   <source src={viewTransitionVideo} type="video/mp4" />
-</video>
-
+<div class="relative h-0 pb-[56.25%]">
+   <iframe
+      src="https://jumpshare.com/embed/rXZfxb3qJogK6gbeYDGN"
+      frameborder="0"
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+      class="absolute left-0 top-0 h-full w-full"></iframe>
+</div>
 ### Extensions
 
 There are many extensions available for Chromium browsers, but because Firefox has a different core, developers have to create a separate extension (add-on) for Firefox.\
-And, as you may know, Chrome in particular, and Chromium browsers in general, have the most users (>65% of web browser usage), which means a larger community for extension developers.
+And, as you may have known, Chrome in particular and Chromium browsers in general, have the most users (>65% of web browser usage), which means a larger community for extension developers.
 
 ## Conclusion
 
-No conclusion, choice is on ya. I'll stay with Firefox because it has features I need, and Brave BAT makes no sense in my country.
+Choice is on ya. I'll stay with Firefox because it has features I need, and Brave BAT makes no sense in my country.

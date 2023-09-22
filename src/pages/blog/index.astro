@@ -16,7 +16,7 @@ const allPosts = await getCollection('blog');
          {
             allPosts.map((post) => (
                <a
-                  class="group card bg-base-200 shadow-xl transition-all duration-200 hover:-translate-y-2 "
+                  class="group card rounded-xl bg-base-200 shadow-xl transition-all duration-200 hover:-translate-y-2 "
                   href={'/blog/' + post.slug}
                   transition:name="BlogCard"
                   transition:animate="initial">
@@ -24,11 +24,11 @@ const allPosts = await getCollection('blog');
                      <Image
                         src={post.data.cover}
                         alt={post.data.coverAlt}
-                        class="transition-transform duration-700 group-hover:scale-105"
+                        class="transition-transform delay-100 duration-1000 group-hover:scale-105"
                         transition:name="BlogImage"
                      />
                   </figure>
-                  <div class="prose card-body mb-0">
+                  <div class="prose card-body mb-0 dark:text-white">
                      <div class="card-title font-bold" transition:name="BlogTitle">
                         {post.data.title}
                      </div>

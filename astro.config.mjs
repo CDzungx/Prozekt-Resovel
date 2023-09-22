@@ -13,7 +13,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-   site: 'https://prozekt-resovel.vercel.app/',
+   site: 'https://cdzungx.id.vn/',
 
    vite: {
       ssr: {
@@ -48,7 +48,9 @@ export default defineConfig({
 
    output: 'hybrid',
    adapter: vercel({
-      analytics: true,
-      functionPerRoute: true,
+      webAnalytics: {
+         enabled: true,
+      },
+      functionPerRoute: false,
    }),
 });
