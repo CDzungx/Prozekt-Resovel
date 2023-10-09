@@ -8,6 +8,7 @@ tags: ['browser']
 ---
 
 import HorizontalBarChart from '@components/items/pages/blog/HorizontalBarChart.svelte';
+import MinimalYoutubeEmbed from '@components/items/pages/blog/MinimalYoutubeEmbed.astro';
 
 I'd been using Brave for years, ever since it was released. I also tried Firefox without migrating my data from Brave, but I returned to Brave after a few days because I needed my browser history. I did a full data migration from Brave to Firefox to give it another try after Firefox version 116 added a volume slider to its built-in PiP (Picture-in-Picture) feature.
 
@@ -144,20 +145,13 @@ This newly available technology allows browsers to create a nice animation/trans
 
 Now, let's take a look at a transition on my website:
 
-<div class="relative h-0 pb-[56.25%]">
-   <iframe
-      src="https://jumpshare.com/embed/rXZfxb3qJogK6gbeYDGN"
-      frameborder="0"
-      webkitallowfullscreen
-      mozallowfullscreen
-      allowfullscreen
-      class="absolute left-0 top-0 h-full w-full"></iframe>
-</div>
+<MinimalYoutubeEmbed videoID="4u0EYHuuZJ8" />
 ### Extensions
 
 There are many extensions available for Chromium browsers, but because Firefox has a different core, developers have to create a separate extension (add-on) for Firefox.\
-And, as you may have known, Chrome in particular and Chromium browsers in general, have the most users (>65% of web browser usage), which means a larger community for extension developers.
+And, as you may have known, Chrome in particular and Chromium browsers in general, have the most users (>65% of web browser usage, another 15% is Safari), which means a larger community for extension developers.
 
 ## Conclusion
 
-Choice is on ya. I'll stay with Firefox because it has features I need, and Brave BAT makes no sense in my country.
+Nowadays, modern computers are built with decent CPU & GPU, RAM which can handle a lot of tabs. Therefore, the performance doesn't seem to be a problem.
+Choice is on ya. I'll stay with Firefox because it has features I need, and Brave BAT makes no sense in my country. If your usage is mainly on phone, I'd recommend Edge/Brave.

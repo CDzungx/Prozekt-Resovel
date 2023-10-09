@@ -1,0 +1,53 @@
+<script>
+   import LanguageSelectDropdown from '@components/NavFoot/LanguageSelectDropdown.svelte';
+   import LanguageSelectSwitch from '@components/NavFoot/LanguageSelectSwitch.svelte';
+   import DarkSwitchSvelte from '@components/items/legacy/DarkSwitchSvelte.svelte';
+   import '@fontsource/carter-one';
+</script>
+
+<nav class="navbar my-1 rounded-lg p-3 font-carter md:my-2 md:px-5 lg:my-3 lg:px-6">
+   <div class="navbar-start">
+      <div class="dropdown">
+         <label for="toggleButton" class="btn btn-circle btn-ghost lg:hidden">
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               class="h-5 w-5"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+               ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path
+               ></svg>
+         </label>
+         <ul
+            class="menu drawer dropdown-content rounded-box menu-sm w-40 border-t-2 border-gray-400 bg-base-300 align-middle shadow">
+            <li class="mb-2 border-b-2 border-dotted border-black pb-2 dark:border-white">
+               <a class="text-base" href="https://thongnhat.tech/" target="_blank">Countdown</a>
+            </li>
+            <li class="mb-2 border-b-2 border-dotted border-black pb-2 dark:border-white">
+               <a class="text-base" href="/blog">Blog</a>
+            </li>
+            <li class="mb-2 border-b-4 border-double border-black pb-2 dark:border-white">
+               <a class="text-base" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a>
+            </li>
+            <LanguageSelectSwitch />
+         </ul>
+      </div>
+      <a href="/" class="mainTitle prose-bold btn btn-ghost text-xl md:text-2xl lg:text-3xl">Prozekt Resovel</a>
+   </div>
+
+   <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-2 text-lg">
+         <li><a href="https://thongnhat.tech/" target="_blank">Countdown</a></li>
+         <li class="px-6"><a href="/blog">Blog</a></li>
+         <li><a href="https://github.com/users/CDzungx/projects/2/views/3">Roadmap</a></li>
+      </ul>
+   </div>
+
+   <div class="navbar-end">
+      <LanguageSelectDropdown />
+      <div class="divider divider-horizontal hidden md:flex lg:flex"></div>
+      <div class="btn btn-ghost mr-1 px-1 md:mr-2">
+         <DarkSwitchSvelte />
+      </div>
+   </div>
+</nav>

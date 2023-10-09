@@ -45,7 +45,7 @@
 </script>
 
 <div
-   class="chartBox relative h-72 w-full rounded-md border-2 border-gray-800 bg-base-200 p-3 transition-colors duration-200 md:h-72 md:w-[30rem] lg:h-80 lg:w-[50rem]">
+   class="chartBox relative h-72 w-full rounded-md border-2 border-gray-800 bg-base-200 p-3 transition-colors duration-200 md:h-72 md:w-[24rem] lg:h-80 lg:w-[45rem]">
    <div id="chartTitle" class="mb-7 mt-2 text-center font-serif text-3xl font-extrabold">
       {chartTitle}
    </div>

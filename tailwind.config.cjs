@@ -18,12 +18,17 @@ module.exports = {
             helvetica: ['Helvetica', 'sans-serif'],
             verdana: ['Verdana', 'sans-serif'],
             times: ['Times New Roman', 'serif'],
+            monts: ['Montserrat Variable', 'sans-serif'],
          },
 
          typography: {
             DEFAULT: {
                css: {
                   a: {
+                     'font-weight': '500',
+                  },
+                  p: {
+                     'font-family': ['Montserrat Variable', 'sans-serif'],
                      'font-weight': '500',
                   },
                   /**
@@ -50,6 +55,16 @@ module.exports = {
                      'margin-bottom': '0.5rem !important',
                   },
                   */
+               },
+            },
+            light: {
+               css: {},
+            },
+            dark: {
+               css: {
+                  p: {
+                     color: 'white',
+                  },
                },
             },
          },

@@ -5,7 +5,7 @@ import Navbar from '@components/NavFoot/Navbar.astro';
 
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', ({ data }) => data.language === 'en');
 ---
 
 <MainLayout title="Blog">

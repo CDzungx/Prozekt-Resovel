@@ -1,12 +1,12 @@
 ---
-import AdvNavBar from '@components/NavFoot/AdvNavBar.svelte';
+import AdvNavBar from '@components/NavFoot/AdvNavBar.astro';
 import Navbar from '@components/NavFoot/Navbar.astro';
 import '@fontsource-variable/jetbrains-mono';
 import MainLayout from '@layouts/MainLayout.astro';
 ---
 
 <MainLayout title="About Me">
-   <AdvNavBar client:load />
+   <AdvNavBar />
    <main>
       <div class="relative h-full w-full">
          <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-40 -z-40" fill="none" viewBox="0 0 1920 1397">

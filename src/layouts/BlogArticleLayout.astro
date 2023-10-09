@@ -1,7 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import SmoothScrollSolid from '@components/items/misc/SmoothScrollSolid';
-import Navbar from '@components/NavFoot/Navbar.astro';
+import AdvNavBar from '@components/NavFoot/AdvNavBar.astro';
 import FooterButLarger from '@components/NavFoot/FooterButLarger.astro';
 const { title, description, thumbnail } = Astro.props;
 ---
@@ -12,10 +12,10 @@ const { title, description, thumbnail } = Astro.props;
       <meta charset="UTF-8" />
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:url" content="https://prozekt-resovel.vercel.app" />
+      <meta property="og:url" content="https://cdzungx.id.vn/" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Prozekt Resovel" />
-      <meta property="og:description" content="A small website made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={thumbnail.src} />
       <meta property="og:image:type" content="image/png" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -34,9 +34,9 @@ const { title, description, thumbnail } = Astro.props;
       </script>
    </head>
    <body class="bg mb-auto flex min-h-[100dvh] flex-col">
-      <div class="sticky -top-0 z-50 -translate-y-1 px-0 md:px-4 lg:px-8">
-         <div class="rounded-none backdrop-blur-xl backdrop-brightness-90 md:rounded-lg">
-            <Navbar />
+      <div class="sticky -top-0 z-50 px-0">
+         <div class="bg-white bg-opacity-50 backdrop-blur-lg backdrop-brightness-90 dark:bg-black dark:bg-opacity-50">
+            <AdvNavBar />
          </div>
       </div>
       <main
