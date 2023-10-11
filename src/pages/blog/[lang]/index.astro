@@ -1,15 +1,27 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
 import Footer from '@components/NavFoot/Footer.astro';
-import Navbar from '@components/NavFoot/Navbar.astro';
-
+import AdvNavBar from '@components/NavFoot/AdvNavBar.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-const allPosts = await getCollection('blog', ({ data }) => data.language === 'en');
+export async function getStaticPaths() {
+   const pages = await getCollection('blog');
+
+   const paths = pages.map((page) => {
+      const [lang, ...slug] = page.slug.split('/');
+      return { params: { lang } };
+   });
+
+   return paths;
+}
+
+const { lang } = Astro.params;
+
+const allPosts = await getCollection('blog', ({ data }) => data.language === lang);
 ---
 
 <MainLayout title="Blog">
-   <Navbar />
+   <AdvNavBar />
    <main class="my-10 flex-1">
       <p class="mb-8 flex justify-center font-carter text-5xl font-bold">Blog Posts</p>
       <ul role="list" class="grid grid-flow-row grid-cols-1 gap-x-10 gap-y-16 px-16 md:grid-cols-2 lg:grid-cols-3">
