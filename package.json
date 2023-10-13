@@ -14,7 +14,7 @@
       "all": "npm run format && npm run lint:eslint && npm run build"
    },
    "dependencies": {
-      "@astrojs/mdx": "^1.1.1",
+      "@astrojs/mdx": "^1.1.2",
       "@astrojs/prefetch": "^0.4.1",
       "@astrojs/react": "^3.0.3",
       "@astrojs/sitemap": "^3.0.1",
@@ -43,7 +43,7 @@
       "@nanostores/persistent": "^0.9.1",
       "@nanostores/react": "^0.7.1",
       "@nanostores/solid": "^0.4.2",
-      "@studio-freight/lenis": "^1.0.26",
+      "@studio-freight/lenis": "^1.0.27",
       "@studio-freight/react-lenis": "^0.0.36",
       "@theatre/core": "^0.7.0",
       "@theatre/studio": "^0.7.0",
@@ -54,7 +54,7 @@
       "@types/react-dom": "^18.2.13",
       "@types/three": "^0.157.0",
       "animate.css": "^4.1.1",
-      "astro": "^3.2.4",
+      "astro": "^3.3.0",
       "astro-compress": "^2.0.15",
       "astro-icon": "^1.0.0-next.2",
       "astro-robots-txt": "^1.0.0",
@@ -99,7 +99,7 @@
       "prettier": "^3.0.3",
       "prettier-plugin-astro": "^0.12.0",
       "prettier-plugin-svelte": "^3.0.3",
-      "prettier-plugin-tailwindcss": "^0.5.5",
+      "prettier-plugin-tailwindcss": "^0.5.6",
       "svgo": "^3.0.2",
       "typescript": "^5.2.2"
    }
