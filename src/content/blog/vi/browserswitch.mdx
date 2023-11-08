@@ -1,7 +1,8 @@
 ---
 title: 'Mình đã chuyển qua dùng Firefox thay vì Brave'
 date: 2023-09-02
-description: 'Một câu chuyện về trình duyệt.'
+update: 2023-11-08
+description: 'Sử dụng Firefox Nightly trong vòng bốn tháng qua, mình sẽ chia sẻ trải nghiệm của mình với trình duyệt này đặc biệt là với bản build nightly.'
 language: vi
 cover: '../assets/browserswitch/brnff.png'
 tags: ['browser']
@@ -10,10 +11,10 @@ tags: ['browser']
 import HorizontalBarChart from '@components/items/pages/blog/HorizontalBarChart.svelte';
 import MinimalYoutubeEmbed from '@components/items/pages/blog/MinimalYoutubeEmbed.astro';
 
-Mình đã dùng Brave từ lúc nó mới ra mắt, sau đó mình đã thử qua Firefox nhưng do không chuyển dữ liệu từ Brave sang, nên chỉ sau vài ngày mình đã quay lại Brave bởi mình cần lịch sử duyệt web.\
-Ngay khi Firefox cập nhật phiên bản 116 mình đã thực hiện việc chuyển toàn bộ dữ liệu từ Brave sang Firefox để thử lại khi trong phiên bản này Firefox đã thêm thanh điều chỉnh âm lượng vào tính năng PiP (Hình trong Hình).
+Mình đã dùng Brave kể từ lúc nó mới ra mắt, sau đó mình đã thử sơ qua Firefox nhưng do không chuyển dữ liệu từ Brave sang, nên chỉ sau vài ngày thì phải quay lại Brave bởi mình cần xem lịch sử duyệt web.\
+Ngay khi Firefox cập nhật phiên bản 116 mình đã chuyển toàn bộ dữ liệu từ Brave sang Firefox để thử lại khi phiên bản này Firefox đã thêm thanh điều chỉnh âm lượng vào tính năng PiP (Hình trong Hình).
 
-Sử dụng Firefox _Nightly_ trong hai tháng qua, mình sẽ chia sẻ trải nghiệm của mình với bản build _nightly_ của trình duyệt này.
+Sử dụng Firefox _Nightly_ trong vòng bốn tháng, mình sẽ chia sẻ trải nghiệm của mình với bản build _nightly_ của trình duyệt này.
 
 ## Sao Lại Là Firefox?
 
@@ -25,11 +26,12 @@ Sử dụng Firefox _Nightly_ trong hai tháng qua, mình sẽ chia sẻ trải 
 
 ## Chuyển Dữ Liệu
 
-Việc chuyển dữ liệu từ Brave sang Firefox không hề dễ dàng. Mình đã phải Google Search một lúc để biết cách chuyển dữ liệu.
+Việc chuyển dữ liệu từ Brave sang Firefox không hề dễ. Mình đã phải Google một lúc để biết được cách chuyển dữ liệu.
 
 ### Chuyển lịch sử duyệt web
 
-Vì Firefox không hỗ trợ nhập dữ liệu trực tiếp từ Brave (chắc là các trình duyệt khác cũng không), sau khi tìm tòi, mình đã tìm được một cách để chuyển dữ liệu. Do Firefox hỗ trợ nhập lịch sử từ Edge mà Brave với Edge bản mới đều sử dụng nhân Chromium, mình sẽ copy thủ công lịch sử của Brave sang Edge, rồi từ đó nhập lịch sử của Edge vào Firefox. _Cũng có thể sử dụng Chrome để làm điều tương tự._
+Vì Firefox không hỗ trợ nhập dữ liệu trực tiếp từ Brave (và chắc là các trình duyệt khác cũng không hỗ trợ), sau khi tìm tòi, mình đã tìm được một cách:\
+ ➡️ Do Firefox hỗ trợ nhập lịch sử từ Edge, mà Brave và Edge bản mới đều sử dụng nhân Chromium, mình sẽ copy thủ công lịch sử của Brave sang Edge, rồi từ đó nhập lịch sử của Edge vào Firefox. _Cũng có thể sử dụng Chrome để làm điều tương tự._
 
 <details>
    <summary class="text-xl font-bold hover:underline hover:cursor-pointer w-fit">Cách thức</summary>
@@ -89,7 +91,7 @@ Nếu trên Chromium Picture-in-Picture chỉ có thể play/pause, thì trên F
 
 ### Chụp màn hình tích hợp
 
-Mới đây mình mới biết rằng Chrome cũng có [tính năng chụp màn hình tích hợp](https://zapier.com/blog/full-page-screenshots-in-chrome/), tuy nhiên cách sử dụng rất phức tạp. Firefox thì sao nhỉ:
+Mới đây mình mới biết rằng Chrome cũng có [tính năng chụp màn hình tích hợp](https://zapier.com/blog/full-page-screenshots-in-chrome/), tuy nhiên cách sử dụng rất phức tạp. Firefox thì sao nhỉ?
 
 -  Click chuột phải vào toolbar, click _Customize Toolbar_, kéo nút _Screenshot_ lên toolbar để bắt đầu sử dụng.
    ![Toolbar](../assets/browserswitch/ToolbarMag.webp)
@@ -105,7 +107,7 @@ Mở một website, nhấn nút _Screenshot_. Lúc này có thể:
 
 **Firefox hiện có một vài vấn đề sau:**
 
--  Hiệu năng kém
+-  Hiệu năng kém hơn
 -  Không có View Transitions API
 -  Ít extension (add-on)
 
@@ -151,10 +153,10 @@ Lấy ví dụ như một hiệu ứng trên web của mình:
 
 ### Extension
 
-Có rất nhiều extension trên những trình duyệt nhân Chromium nhưng bởi Firefox có nhân (core) khác biệt, dev phải làm ra một extension (add-on) riêng cho Firefox.\
-Và nếu bạn đã biết, Chrome nói riêng và những trình duyệt Chromium nói chung có một cộng đồng rất lớn(>65% lượt sử dụng trình duyệt, 15% nữa là Safari) nên có một cộng đồng rất lớn để phát triển extension.
+Có rất nhiều extension trên những trình duyệt nhân Chromium nhưng Firefox lại có nhân (core) khác biệt, dev phải làm ra một extension (add-on) riêng cho Firefox.\
+Và có thể bạn đã biết hay không thì kệ bạn, Chrome nói riêng và những trình duyệt Chromium nói chung có một cộng đồng rất lớn(>65% lượt sử dụng trình duyệt, 15% nữa là Safari) nên có một cộng đồng rất lớn để phát triển extension.
 
 ## Kết Luận
 
 Những máy tính đời mới ngày nay đều có thể mở hàng trăm tab trên trình duyệt bình thường, CPU cũng được cải thiện nhiều nên vấn đề hiệu năng cũng không quá quan trọng.\
-Lựa chọn là ở bạn. Mình sẽ chọn Firefox vì có những tính năng mà mình cần và Brave BAT không có nghĩa lý gì ở Việt Nam. Nhưng nếu bạn chủ yếu dùng trình duyệt trên điện thoại thì nên dùng Brave/Edge hơn.
+Tuỳ bạn thôi. Mình sẽ chọn Firefox vì có những tính năng mà mình cần đặc biệt là PiP, Brave BAT thì không có nghĩa lý gì ở Việt Nam. Nhưng nếu bạn dùng trình duyệt trên điện thoại là chủ yếu thì nên dùng Brave/Edge hơn.

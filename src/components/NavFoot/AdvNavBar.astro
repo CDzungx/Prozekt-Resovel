@@ -1,7 +1,9 @@
 ---
 import '@fontsource/carter-one';
 import DarkSwitch from './DarkSwitch.jsx';
-import BlogLanguageSvelte from './BlogLanguageSvelte.svelte';
+import BlogLanguageSolid from './BlogLanguageSolid';
+
+const lang = Astro.params.lang;
 ---
 
 <nav class="navbar rounded-sm p-3 py-5 font-carter">
@@ -22,7 +24,7 @@ import BlogLanguageSvelte from './BlogLanguageSvelte.svelte';
             tabindex="0"
             class="menu drawer dropdown-content rounded-box menu-sm w-40 border-t-2 border-gray-400 bg-base-300 align-middle shadow">
             <li class="mb-2 border-b-2 border-dotted border-black pb-2 dark:border-white">
-               <a class="text-base" href="/blog">Blog</a>
+               <a class="text-base" href={'/blog/' + lang}>Blog</a>
             </li>
             <li class="mb-2 border-b-4 border-dotted border-black pb-2 dark:border-white">
                <a class="text-base" href="https://github.com/users/CDzungx/projects/2/views/2">Plans</a>
@@ -31,7 +33,7 @@ import BlogLanguageSvelte from './BlogLanguageSvelte.svelte';
                <a class="text-base" href="#" target="_blank">About</a>
             </li>
             <div class="inline-block items-center md:hidden">
-               <BlogLanguageSvelte client:load />
+               <BlogLanguageSolid client:visible />
             </div>
          </ul>
       </div>
@@ -43,7 +45,7 @@ import BlogLanguageSvelte from './BlogLanguageSvelte.svelte';
    </div>
    <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-2 text-lg">
-         <li><a href="/blog">Blog</a></li>
+         <li><a href={'/blog/' + lang}>Blog</a></li>
          <li class="px-6"><a href="https://github.com/users/CDzungx/projects/2/views/3">Roadmap</a></li>
          <li><a href="#" target="_blank">About</a></li>
       </ul>
@@ -51,7 +53,7 @@ import BlogLanguageSvelte from './BlogLanguageSvelte.svelte';
 
    <div class="navbar-end">
       <div class="hidden md:block">
-         <BlogLanguageSvelte client:visible />
+         <BlogLanguageSolid client:visible />
       </div>
       <div class="divider divider-horizontal hidden md:flex lg:flex"></div>
       <div class="btn btn-ghost mr-1 px-1 md:mr-3">

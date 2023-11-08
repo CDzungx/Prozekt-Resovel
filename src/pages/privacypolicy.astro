@@ -1,0 +1,58 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import logo from '@assets/img/404fav.svg';
+import '@fontsource/bungee-shade';
+import thumb404 from '@assets/img/404thumbnail.png';
+---
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="description" content="A project made of Astro, SolidJS, Svelte, React, TailwindCSS" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:url" content="https://cdzungx.id.vn/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Prozekt Resovel" />
+      <meta property="og:title" content="Prozekt Resovel" />
+      <meta property="og:description" content="Privacy Policy" />
+      <meta property="og:image" content={thumb404.src} />
+      <link rel="icon" type="x-icon" href="/favicon.ico" />
+      <title>Privacy Policy</title>
+      <ViewTransitions />
+   </head>
+   <body class="flex h-[100dvh] items-center justify-center bg-stone-900 text-center text-slate-100">
+      <main class="flex h-full w-full flex-col justify-center gap-0 md:flex-row md:gap-10 lg:gap-16">
+         <a href="/" class="btn absolute left-4 top-4 rounded-lg bg-zinc-800 text-gray-200 hover:text-black">Homepage</a
+         >
+         <div class="flex items-center justify-center">
+            <figure class="mb-6 md:mb-0">
+               <img
+                  src={logo.src}
+                  alt="Site Logo"
+                  class="-mt-28 aspect-square h-48 w-48 md:mt-0 md:h-56 md:w-56 lg:h-72 lg:w-72"
+               />
+            </figure>
+         </div>
+         <div class="hidden items-center justify-center md:flex">
+            <div class="h-32 border-2 border-gray-400 lg:h-36"></div>
+         </div>
+         <div class="flex flex-col justify-center p-2">
+            <div
+               class="card w-full rounded-lg bg-white/80 px-4 pb-5 pt-5 text-left text-lg text-black md:h-1/2 md:w-[28rem] lg:w-[45em]">
+               <p class="card-title mb-2 justify-center text-3xl font-bold">Privacy Policy</p>
+               <p class="inline-block">
+                  <p class="mb-5 text-center font-bold">By using/accesing this website, you agree to the following:</p>
+
+                   1. Location of visitor (country via IP) & access time are collected and handled by CloudFlare & Vercel
+                  as a KYC part for me to optimize the web development & security. Those data will not shared with any third
+                  parties by myself.
+
+                  <br /> 2. No other personal data is collected.
+                  <br /> 3. No cookies are used.
+               </p>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>

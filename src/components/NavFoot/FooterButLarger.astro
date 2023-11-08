@@ -34,10 +34,19 @@ import SvelteDebug from '@components/NavFoot/SvelteDebug.svelte';
                </div></button
             >
             <SvelteDebug client:visible />
-
+            <a
+               href="/privacypolicy"
+               class="tooltip md:ml-4 lg:ml-5"
+               data-tip="Privacy Policy"
+               target="_blank"
+               aria-label="Privacy Policy">
+               <div class="s box-border">
+                  <Icon name="ic:baseline-privacy-tip" class="h-9 w-9" />
+               </div>
+            </a>
             <a href="https://github.com/CDzungx/" class="tooltip" data-tip="Github" target="_blank" aria-label="Github">
                <div class="box-border">
-                  <Icon name="mdi:github" class="mx-3 h-9 w-9 md:mx-4 lg:mx-5" />
+                  <Icon name="mdi:github" class="h-9 w-9 md:mx-4 lg:mx-5" />
                </div>
             </a>
 

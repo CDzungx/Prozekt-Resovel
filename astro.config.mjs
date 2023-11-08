@@ -30,7 +30,7 @@ export default defineConfig({
       icon({
          include: {
             mdi: ['github', 'arrow-left-bold-outline', 'home-outline'],
-            ic: ['outline-discord'],
+            ic: ['outline-discord', 'baseline-privacy-tip'],
             ph: ['code-fill'],
             emojione: ['flag-for-united-kingdom', 'flag-for-vietnam'],
             devicon: ['solidjs'],
