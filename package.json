@@ -14,14 +14,14 @@
       "all": "npm run format && npm run lint:eslint && npm run build"
    },
    "dependencies": {
-      "@astrojs/mdx": "^1.1.3",
+      "@astrojs/mdx": "^1.1.4",
       "@astrojs/prefetch": "^0.4.1",
       "@astrojs/react": "^3.0.4",
       "@astrojs/sitemap": "^3.0.3",
       "@astrojs/solid-js": "^3.0.2",
       "@astrojs/svelte": "^4.0.3",
       "@astrojs/tailwind": "^5.0.2",
-      "@astrojs/vercel": "^5.1.0",
+      "@astrojs/vercel": "^5.2.0",
       "@fontsource-variable/jetbrains-mono": "^5.0.18",
       "@fontsource-variable/montserrat": "^5.0.16",
       "@fontsource/bungee-shade": "^5.0.17",
@@ -54,7 +54,7 @@
       "@types/react-dom": "^18.2.15",
       "@types/three": "^0.158.2",
       "animate.css": "^4.1.1",
-      "astro": "^3.4.3",
+      "astro": "^3.5.3",
       "astro-compress": "^2.2.3",
       "astro-icon": "^1.0.0-next.2",
       "astro-robots-txt": "^1.0.0",
@@ -62,7 +62,7 @@
       "fontfaceobserver": "^2.3.0",
       "framer-motion": "^10.16.4",
       "gsap": "^3.12.2",
-      "nanostores": "^0.9.4",
+      "nanostores": "^0.9.5",
       "postcss-preset-env": "^9.3.0",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
@@ -70,13 +70,13 @@
       "react-hydration-provider": "^2.0.0",
       "sharp": "^0.32.6",
       "solid-js": "^1.8.5",
-      "svelte": "^4.2.2",
+      "svelte": "^4.2.3",
       "tailwindcss": "^3.3.5",
       "textify.js": "^3.0.1",
       "theme-change": "^2.5.0",
       "three": "^0.158.0",
       "troika-three-text": "^0.49.0",
-      "typed.js": "^2.0.16"
+      "typed.js": "^2.1.0"
    },
    "devDependencies": {
       "@tailwindcss/typography": "^0.5.10",
@@ -98,9 +98,9 @@
       "postcss-url": "^10.1.3",
       "prettier": "^3.0.3",
       "prettier-plugin-astro": "^0.12.1",
-      "prettier-plugin-svelte": "^3.0.3",
-      "prettier-plugin-tailwindcss": "^0.5.6",
-      "svgo": "^3.0.2",
+      "prettier-plugin-svelte": "^3.1.0",
+      "prettier-plugin-tailwindcss": "^0.5.7",
+      "svgo": "^3.0.3",
       "typescript": "^5.2.2"
    }
 }
