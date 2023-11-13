@@ -57,9 +57,6 @@ module.exports = {
                   */
                },
             },
-            light: {
-               css: {},
-            },
             dark: {
                css: {
                   p: {
@@ -80,7 +77,7 @@ module.exports = {
       themes: [
          {
             light: {
-               ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
+               ...require('daisyui/src/theming/themes')["cupcake"],
                'base-100': '#faf7f5',
                '--rounded-btn': '0.6rem',
                '--rounded-lg': '1rem',
@@ -88,7 +85,7 @@ module.exports = {
          },
          {
             dark: {
-               ...require('daisyui/src/theming/themes')['[data-theme=business]'],
+               ...require('daisyui/src/theming/themes')["business"],
                neutral: '#242e32',
                'base-100': '#272824',
                '--rounded-box': '1rem',

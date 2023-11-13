@@ -2,7 +2,7 @@
 // V1.7
 import { createSignal, onCleanup } from 'solid-js';
 import { useStore } from '@nanostores/solid';
-import { countdownContent } from '@store/translations/en';
+import { countdownContent } from '@store/translations/en.ts';
 import vnflag from '@assets/img/Co-Vietnam.webp';
 import gpflag from '@assets/img/Co-GP.webp';
 import { locale } from '@store/i18n';
@@ -10,8 +10,7 @@ import { locale } from '@store/i18n';
 var now = new Date();
 const ngayQuocKhanh = new Date(now.getFullYear(), 9 - 1, 2); // September 2nd (Ngay Quoc Khanh)
 const ngayThongNhat = new Date(now.getFullYear(), 4 - 1, 30); // April 30th (Ngay Thong Nhat)
-const tcd = useStore(countdownContent);
-const lang = useStore(locale);
+
 const QKWikiEN = 'https://en.wikipedia.org/wiki/Vietnam_National_Day';
 const QKWikiVN = 'https://vi.wikipedia.org/wiki/Ngày_Quốc_khánh_(Việt_Nam)';
 const TNWikiEN = 'https://en.wikipedia.org/wiki/Fall_of_Saigon';
@@ -43,6 +42,9 @@ function getCountdownValue() {
       countForDate,
    };
 }
+
+const tcd = useStore(countdownContent);
+const lang = useStore(locale);
 
 const SolidCountdown = () => {
    const [countdownValue, setCountdownValue] = createSignal(getCountdownValue());
