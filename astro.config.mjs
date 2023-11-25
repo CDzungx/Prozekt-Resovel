@@ -21,7 +21,7 @@ export default defineConfig({
       },
    },
    redirects: {
-      '/github': 'https://github.com/CDzungx/Prozekt-Resovel',
+      '/github': 'https://github.com/CDzungx/',
       '/discord': 'https://discordapp.com/users/1088612635219599460',
    },
    integrations: [
