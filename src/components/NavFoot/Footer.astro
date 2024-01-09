@@ -12,7 +12,10 @@ import SvelteDebug from '@components/NavFoot/SvelteDebug.svelte';
    <div class="grid-flow-col items-center gap-2 whitespace-normal py-0 md:whitespace-nowrap lg:gap-4">
       <span class="prose">
          <span
-            ><a href={link}><label class="badge indicator-item badge-secondary cursor-pointer">v{version}</label></a>
+            ><a href={link}
+               ><label class="badge indicator-item badge-secondary cursor-pointer" for="modalButton">v{version}</label
+               ></a
+            >
              2023
          </span><span class="hidden font-medium lg:inline-block">© CDzungx&nbsp;</span>|
          <a
@@ -56,26 +59,26 @@ import SvelteDebug from '@components/NavFoot/SvelteDebug.svelte';
       <div class="hidden md:flex lg:flex">
          <button onclick="debugModal.showModal();" id="modalButton" class="tooltip" data-tip="Debug" aria-label="Debug">
             <div class="box-border">
-               <Icon name="ph:code-fill" class="h-8 w-8" />
+               <Icon name="ph:code-fill" class="size-8" />
             </div></button
          >
          <SvelteDebug client:visible />
          <div class="divider divider-horizontal mx-0"></div>
          <a href="/privacypolicy" class="tooltip" data-tip="Privacy Policy" target="_blank" aria-label="Privacy Policy">
             <div class="box-border">
-               <Icon name="ic:baseline-privacy-tip" class="h-8 w-8" />
+               <Icon name="ic:baseline-privacy-tip" class="size-8" />
             </div>
          </a>
          <div class="divider divider-horizontal mx-0"></div>
          <a href="/github" class="tooltip" data-tip="Github" target="_blank" aria-label="Github">
             <div class="box-border">
-               <Icon name="mdi:github" class="h-8 w-8" />
+               <Icon name="mdi:github" class="size-8" />
             </div>
          </a>
          <div class="divider divider-horizontal mx-0"></div>
          <a href="/discord" class="tooltip" data-tip="Discord" target="_blank" aria-label="Discord">
             <div class="box-border">
-               <Icon name="ic:outline-discord" class="h-8 w-8" />
+               <Icon name="ic:outline-discord" class="size-8" />
             </div>
          </a>
       </div>
