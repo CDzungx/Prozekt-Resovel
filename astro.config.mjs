@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import solidJs from '@astrojs/solid-js';
-import prefetch from '@astrojs/prefetch';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
@@ -21,11 +20,10 @@ export default defineConfig({
       },
    },
    redirects: {
-      '/github': 'https://github.com/CDzungx/Prozekt-Resovel',
+      '/github': 'https://github.com/CDzungx/',
       '/discord': 'https://discordapp.com/users/1088612635219599460',
    },
    integrations: [
-      prefetch(),
       tailwind(),
       icon({
          include: {
@@ -33,7 +31,7 @@ export default defineConfig({
             ic: ['outline-discord', 'baseline-privacy-tip'],
             ph: ['code-fill'],
             emojione: ['flag-for-united-kingdom', 'flag-for-vietnam'],
-            devicon: ['solidjs'],
+            devicon: ['solidjs', 'astro'],
             'vscode-icons': ['file-type-astro', 'file-type-svelte', 'file-type-reactjs', 'file-type-tailwind'],
          },
       }),

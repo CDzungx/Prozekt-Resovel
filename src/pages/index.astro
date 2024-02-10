@@ -7,6 +7,9 @@ import UnderlineText from '@components/items/misc/UnderlineText.astro';
 import Footer from '@components/NavFoot/Footer.astro';
 import DarkSwitch from '@components/NavFoot/DarkSwitch';
 import MainLayout from '@layouts/MainLayout.astro';
+import { $blogIsEnglish } from '@store/DataStore';
+let curLang = $blogIsEnglish ? 'vi' : 'en';
+const blogLink = `/blog/${curLang}`;
 ---
 
 <MainLayout title="Prozekt Resovel">
@@ -20,7 +23,7 @@ import MainLayout from '@layouts/MainLayout.astro';
             <span id="title" data-textify>Prozekt Resovel</span>
             <div
                class="mt-10 flex gap-2 rounded-2xl bg-white p-2 opacity-80 bg-blend-lighten contrast-150 dark:bg-opacity-80 md:gap-3 lg:gap-5">
-               <Icon name="vscode-icons:file-type-astro" />
+               <Icon name="devicon:astro" />
                <Icon name="vscode-icons:file-type-svelte" />
                <Icon name="devicon:solidjs" />
                <Icon name="vscode-icons:file-type-reactjs" />
@@ -35,7 +38,7 @@ import MainLayout from '@layouts/MainLayout.astro';
                   <a href="/vietnam"><UnderlineText text="Project Vietnam" /></a>
                </li>
                <li class="my-8 w-fit">
-                  <a href="/blog/en/"><UnderlineText text="Blog" /></a>
+                  <a href={blogLink}><UnderlineText text="Blog" /></a>
                </li>
                <li class="w-fit">
                   <a href="https://github.com/users/CDzungx/projects/2/views/3"><UnderlineText text="Roadmap" /></a>
@@ -54,7 +57,7 @@ import MainLayout from '@layouts/MainLayout.astro';
          background-size: 25rem;
       }
    </style>
-   <script>
+   <script lang="ts">
       import Textify from 'textify.js';
       import gsap from 'gsap';
       import FontFaceObserver from 'fontfaceobserver';

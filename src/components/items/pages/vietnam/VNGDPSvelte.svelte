@@ -83,7 +83,7 @@
             return `url(#mask-${i})`;
          });
       svg.append('g')
-         .call(d3.axisBottom(xScale))
+         .call(d3.axisBottom(xScale).tickFormat(d3.format('d')))
          .attr('transform', `translate(${p * 4},${h})`);
       svg.select('g').transition().duration(500);
       svg.selectAll('g').selectAll('text').attr('class', 'text-black dark:text-white font-bold text-xs');

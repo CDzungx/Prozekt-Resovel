@@ -1,8 +1,8 @@
 /** @jsxImportSource solid-js */
-// V1.6
+// V1.7
 import { createSignal, onCleanup } from 'solid-js';
 import { useStore } from '@nanostores/solid';
-import { countdownContent } from '@store/translations/en';
+import { countdownContent } from '@store/translations/en.ts';
 import vnflag from '@assets/img/Co-Vietnam.webp';
 import gpflag from '@assets/img/Co-GP.webp';
 import { locale } from '@store/i18n';
@@ -10,6 +10,7 @@ import { locale } from '@store/i18n';
 var now = new Date();
 const ngayQuocKhanh = new Date(now.getFullYear(), 9 - 1, 2); // September 2nd (Ngay Quoc Khanh)
 const ngayThongNhat = new Date(now.getFullYear(), 4 - 1, 30); // April 30th (Ngay Thong Nhat)
+
 const QKWikiEN = 'https://en.wikipedia.org/wiki/Vietnam_National_Day';
 const QKWikiVN = 'https://vi.wikipedia.org/wiki/Ngày_Quốc_khánh_(Việt_Nam)';
 const TNWikiEN = 'https://en.wikipedia.org/wiki/Fall_of_Saigon';
@@ -42,9 +43,12 @@ function getCountdownValue() {
    };
 }
 
+const tcd = useStore(countdownContent);
+const lang = useStore(locale);
+
 const SolidCountdown = () => {
    const [countdownValue, setCountdownValue] = createSignal(getCountdownValue());
-   const tcd = useStore(countdownContent);
+
    onCleanup(() => {
       clearInterval(interval);
    });
@@ -52,7 +56,7 @@ const SolidCountdown = () => {
    const interval = setInterval(() => {
       setCountdownValue(getCountdownValue());
    }, 1000);
-   const lang = useStore(locale);
+
    let wikiLink = () => {
       if (countdownValue().countForDate === 30) {
          if (lang() === 'en') {
@@ -86,7 +90,7 @@ const SolidCountdown = () => {
                            class="group prose relative flex justify-center font-extrabold no-underline sm:prose-lg md:prose-2xl"
                            href={wikiLink()}
                            target="_blank">
-                           {countdownValue().countForDate === 30 ? tcd().thongnhat : tcd().quockhanh}
+                           <span>{countdownValue().countForDate === 30 ? tcd().thongnhat : tcd().quockhanh}</span>
                            <svg
                               class="absolute right-0 top-0 hidden opacity-0 transition-opacity duration-200 group-hover:opacity-80 md:right-7 md:flex lg:-right-4 "
                               xmlns="http://www.w3.org/2000/svg"
@@ -110,25 +114,25 @@ const SolidCountdown = () => {
                                  <span style={{ '--value': countdownValue().days }}></span>
                               )}
                            </span>
-                           {tcd().day}
+                           <span>{tcd().day}</span>
                         </div>
                         <div class="flex flex-col">
                            <span class="countdown justify-center font-mono text-4xl md:text-5xl">
                               <span style={{ '--value': countdownValue().hours }}></span>
                            </span>
-                           {tcd().hour}
+                           <span>{tcd().hour}</span>
                         </div>
                         <div class="flex flex-col">
                            <span class="countdown justify-center font-mono text-4xl md:text-5xl">
                               <span style={{ '--value': countdownValue().minutes }}></span>
                            </span>
-                           {tcd().min}
+                           <span>{tcd().min}</span>
                         </div>
                         <div class="flex flex-col">
                            <span class="countdown justify-center font-mono text-4xl md:text-5xl">
                               <span style={{ '--value': countdownValue().seconds }}></span>
                            </span>
-                           {tcd().sec}
+                           <span>{tcd().sec}</span>
                         </div>
                      </div>
                   </div>
