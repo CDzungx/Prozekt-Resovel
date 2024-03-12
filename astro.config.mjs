@@ -51,4 +51,7 @@ export default defineConfig({
       },
       functionPerRoute: false,
    }),
+   experimental: {
+      directRenderScript: true,
+   },
 });
