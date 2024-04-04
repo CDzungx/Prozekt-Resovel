@@ -1,8 +1,8 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import SmoothScroll from '@components/items/misc/SmoothScrollSolid';
+import { ViewTransitions } from "astro:transitions";
+import SmoothScroll from "@components/items/misc/SmoothScrollSolid";
 const { title } = Astro.props;
-import thumbnail from '@assets/img/thumbnail.png';
+import thumbnail from "@assets/img/thumbnail.png";
 ---
 
 <!doctype html>
@@ -29,6 +29,7 @@ import thumbnail from '@assets/img/thumbnail.png';
       </script>
       <script>
          import { themeChange } from 'theme-change';
+
          themeChange();
       </script>
    </head>
@@ -38,6 +39,7 @@ import thumbnail from '@assets/img/thumbnail.png';
          html {
             transition-duration: 200ms;
          }
+
          .drawer {
             z-index: 99999;
          }

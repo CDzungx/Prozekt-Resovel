@@ -1,16 +1,16 @@
 <script>
-   import { onMount } from 'svelte';
-   import { setting } from '@store/i18n';
+import { setting } from "@store/i18n";
+import { onMount } from "svelte";
 
-   let isBlogPage;
-   onMount(() => {
-      const lang = localStorage?.getItem('locale') || 'en';
-      setting.set(lang);
-      isBlogPage = window.location.href.includes('blog');
-      if (isBlogPage) {
-         setting.set('en');
-      }
-   });
+let isBlogPage;
+onMount(() => {
+	const lang = localStorage?.getItem("locale") || "en";
+	setting.set(lang);
+	isBlogPage = window.location.href.includes("blog");
+	if (isBlogPage) {
+		setting.set("en");
+	}
+});
 </script>
 
 <div class="langSel hidden md:flex">

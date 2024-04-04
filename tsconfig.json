@@ -1,28 +1,27 @@
 {
-   "extends": "astro/tsconfigs/strict",
-   "compilerOptions": {
-      "strict": true,
-      "strictNullChecks": false,
-      "target": "ES2022",
-      "module": "ES2022",
-      "moduleResolution": "node",
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true,
-      "jsx": "react-jsx",
-      "jsxImportSource": "react",
-      "types": ["vite/client"],
-      "noEmit": true,
-      "isolatedModules": true,
-      "verbatimModuleSyntax": false,
-      "baseUrl": ".",
-      "paths": {
-         "@components/*": ["src/components/*"],
-         "@layouts/*": ["src/layouts/*"],
-         "@pages/*": ["src/pages/*"],
-         "@assets/*": ["src/assets/*"],
-         "@store/*": ["src/store/*"]
-      }
-   },
-   "exclude": ["node_modules", ".astro", ".vercel", ".cache"]
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"strict": true,
+		"strictNullChecks": false,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"noEmit": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": false,
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@pages/*": ["src/pages/*"],
+			"@assets/*": ["src/assets/*"],
+			"@store/*": ["src/store/*"]
+		}
+	},
+	"exclude": ["node_modules", ".astro", ".vercel", ".cache"]
 }

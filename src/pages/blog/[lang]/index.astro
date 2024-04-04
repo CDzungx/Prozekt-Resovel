@@ -1,23 +1,26 @@
 ---
-import MainLayout from '@layouts/MainLayout.astro';
-import Footer from '@components/NavFoot/Footer.astro';
-import AdvNavBar from '@components/NavFoot/AdvNavBar.astro';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import AdvNavBar from "@components/NavFoot/AdvNavBar.astro";
+import Footer from "@components/NavFoot/Footer.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 export async function getStaticPaths() {
-   const pages = await getCollection('blog');
+	const pages = await getCollection("blog");
 
-   const paths = pages.map((page) => {
-      const [lang, ...slug] = page.slug.split('/');
-      return { params: { lang } };
-   });
+	const paths = pages.map((page) => {
+		const [lang, ...slug] = page.slug.split("/");
+		return { params: { lang } };
+	});
 
-   return paths;
+	return paths;
 }
 
 const { lang } = Astro.params;
 
-const allPosts = await getCollection('blog', ({ data }) => data.language === lang);
+const allPosts = await getCollection(
+	"blog",
+	({ data }) => data.language === lang,
+);
 ---
 
 <MainLayout title="Blog">

@@ -1,27 +1,49 @@
 ---
-import TableOfContent from '@components/items/pages/blog/TableOfContent.astro';
-import BlogArticleLayout from '@layouts/BlogArticleLayout.astro';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { BlogPostStat, db, eq } from "astro:db";
+import TableOfContent from "@components/items/pages/blog/TableOfContent.astro";
+import BlogArticleLayout from "@layouts/BlogArticleLayout.astro";
+import { Icon } from "astro-icon/components";
+import numbro from "numbro";
 
 export async function getStaticPaths() {
-   const pages = await getCollection('blog');
+	const pages = await getCollection("blog");
 
-   const paths = pages.map((page) => {
-      const [lang, ...slug] = page.slug.split('/');
-      return { params: { lang, slug: slug.join('/') || undefined }, props: page };
-   });
+	const paths = pages.map((page) => {
+		const [lang, ...slug] = page.slug.split("/");
+		return {
+			params: { lang, slug: slug.join("/") || undefined },
+			props: page,
+		};
+	});
 
-   return paths;
+	return paths;
 }
 
 const { lang, slug } = Astro.params;
 const page = Astro.props;
-const formattedDate = page.data.date.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
+const formattedDate = page.data.date.toLocaleDateString(lang, {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+let updateDate:string;
 if (page.data.update) {
-   var updateDate = page.data.update.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
+	updateDate = page.data.update.toLocaleDateString(lang, {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
 }
 const { Content, headings } = await page.render();
+
+// const blogStats = await db
+// 	.select()
+// 	.from(BlogPostStat)
+// 	.where(eq(BlogPostStat.id, slug));
+// const views = numbro(blogStats[0].view).format({ average: true,  });
+// const likes = numbro(blogStats[0].like).format({ average: true,  });
 ---
 
 <BlogArticleLayout title={page.data.title} description={page.data.description} thumbnail={page.data.cover}>
@@ -37,6 +59,7 @@ const { Content, headings } = await page.render();
          <p class="my-0 flex flex-col justify-normal md:flex-row md:justify-between">
             <span>
                ✍️&nbsp;<span class="font-black">{page.data.author}</span>
+               <br />
             </span>
             <span>
                🗓️&nbsp;{formattedDate}
@@ -51,6 +74,21 @@ const { Content, headings } = await page.render();
       </div>
    </div>
    <div class="col-span-3 hidden md:block" transition:animate="slide">
-      <TableOfContent headers={headings} maxDepth={page.data.maxDepthTOC || 4} />
+      <div class="static top-28 md:sticky">
+         <TableOfContent headers={headings} maxDepth={page.data.maxDepthTOC || 4} />
+         <!-- <div class="mt-5 flex flex-row justify-between pr-4 opacity-70">
+            <div class="flex flex-col items-center rounded-md bg-base-200 p-2 px-4">
+               <Icon name="ph:eye-bold" class="size-6" />
+               {views || 0}
+            </div>
+            <div class="flex flex-col items-center rounded-md bg-base-200 p-2 px-7">
+               <Icon name="mdi:like-outline" class="size-6" />
+               <p>{likes || 0}</p>
+            </div>
+            <div class="flex items-center justify-center rounded-md bg-base-200 px-5">
+               <Icon name="mdi:share-outline" class="size-6" />
+            </div>
+         </div> -->
+      </div>
    </div>
 </BlogArticleLayout>

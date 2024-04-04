@@ -1,14 +1,14 @@
 ---
-import '@fontsource/lobster';
-import '@fontsource/carter-one';
-import 'animate.css/animate.min.css';
-import { Icon } from 'astro-icon/components';
-import UnderlineText from '@components/items/misc/UnderlineText.astro';
-import Footer from '@components/NavFoot/Footer.astro';
-import DarkSwitch from '@components/NavFoot/DarkSwitch';
-import MainLayout from '@layouts/MainLayout.astro';
-import { $blogIsEnglish } from '@store/DataStore';
-let curLang = $blogIsEnglish ? 'vi' : 'en';
+import DarkSwitch from "@components/NavFoot/DarkSwitch";
+import Footer from "@components/NavFoot/Footer.astro";
+import UnderlineText from "@components/items/misc/UnderlineText.astro";
+import "@fontsource/carter-one";
+import "@fontsource/lobster";
+import MainLayout from "@layouts/MainLayout.astro";
+import { $blogIsEnglish } from "@store/DataStore";
+import "animate.css/animate.min.css";
+import { Icon } from "astro-icon/components";
+const curLang = $blogIsEnglish ? "vi" : "en";
 const blogLink = `/blog/${curLang}`;
 ---
 

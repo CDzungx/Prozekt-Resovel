@@ -1,4 +1,5 @@
 /** @jsxImportSource solid-js */
+/*
 import { createSignal, onCleanup, Component, Show } from 'solid-js';
 import { Motion, Presence } from '@motionone/solid';
 import '@components/css/load.css';
@@ -47,3 +48,5 @@ const LoaderSolid: Component = () => {
 };
 
 export default LoaderSolid;
+
+ */

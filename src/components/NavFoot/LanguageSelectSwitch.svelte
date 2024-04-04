@@ -1,22 +1,22 @@
 <script>
-   import { onMount } from 'svelte';
-   import { setting } from '@store/i18n';
+import { setting } from "@store/i18n";
+import { onMount } from "svelte";
 
-   let checked = setting === 'en';
-   let isBlogPage;
-   function handleChange(event) {
-      setting.set(event.target.checked ? 'vi' : 'en');
-   }
-   onMount(() => {
-      const lang = localStorage?.getItem('locale') || 'en';
-      if (lang === 'vi') {
-         checked = true;
-      }
-      isBlogPage = window.location.href.includes('blog');
-      if (isBlogPage) {
-         setting.set('en');
-      }
-   });
+let checked = setting === "en";
+let isBlogPage;
+function handleChange(event) {
+	setting.set(event.target.checked ? "vi" : "en");
+}
+onMount(() => {
+	const lang = localStorage?.getItem("locale") || "en";
+	if (lang === "vi") {
+		checked = true;
+	}
+	isBlogPage = window.location.href.includes("blog");
+	if (isBlogPage) {
+		setting.set("en");
+	}
+});
 </script>
 
 <div class="form-control grid-flow-col">

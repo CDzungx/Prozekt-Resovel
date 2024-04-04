@@ -1,17 +1,19 @@
 ---
-import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeading } from "astro";
 
 interface Props {
-   headers: MarkdownHeading[];
-   maxDepth: number;
+	headers: MarkdownHeading[];
+	maxDepth: number;
 }
 
 const { headers, maxDepth } = Astro.props;
-const filteredHeaders = headers.filter((header) => header.depth > 1 && header.depth < maxDepth + 1);
+const filteredHeaders = headers.filter(
+	(header) => header.depth > 1 && header.depth < maxDepth + 1,
+);
 ---
 
 <div
-   class="static top-28 rounded-lg border-2 border-base-300 bg-base-200/80 p-5 px-0 opacity-95 transition-colors duration-300 md:sticky md:rounded-r-none md:border-0 md:px-5 md:pb-7">
+   class="rounded-lg border-2 border-base-300 bg-base-200/80 p-5 px-0 opacity-95 transition-colors duration-300 md:rounded-r-none md:border-0 md:px-5 md:pb-7">
    <span class="mb-2 flex justify-center text-2xl font-extrabold">Table of Content</span>
    <nav class="mt-1 text-base md:mt-3">
       <ul>

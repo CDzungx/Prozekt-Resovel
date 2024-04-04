@@ -1,8 +1,8 @@
 <script>
-   import LanguageSelectDropdown from '@components/NavFoot/LanguageSelectDropdown.svelte';
-   import LanguageSelectSwitch from '@components/NavFoot/LanguageSelectSwitch.svelte';
-   import DarkSwitchSvelte from '@components/items/legacy/DarkSwitchSvelte.svelte';
-   import '@fontsource/carter-one';
+import LanguageSelectDropdown from "@components/NavFoot/LanguageSelectDropdown.svelte";
+import LanguageSelectSwitch from "@components/NavFoot/LanguageSelectSwitch.svelte";
+import DarkSwitchSvelte from "@components/items/legacy/DarkSwitchSvelte.svelte";
+import "@fontsource/carter-one";
 </script>
 
 <nav class="navbar my-1 rounded-lg p-3 font-carter md:my-2 md:px-5 lg:my-3 lg:px-6">
@@ -19,7 +19,7 @@
                ></svg>
          </label>
          <ul
-            class="menu drawer dropdown-content rounded-box menu-sm w-40 border-t-2 border-gray-400 bg-base-300 align-middle shadow">
+            class="menu drawer dropdown-content menu-sm w-40 rounded-box border-t-2 border-gray-400 bg-base-300 align-middle shadow">
             <li class="mb-2 border-b-2 border-dotted border-black pb-2 dark:border-white">
                <a class="text-base" href="https://thongnhat.tech/" target="_blank">Countdown</a>
             </li>

@@ -1,28 +1,28 @@
 <script>
-   import { onMount } from 'svelte';
-   import { dataTheme } from '@store/DataStore';
-   let isChecked = false;
-   function setCurrentTheme() {
-      if (isChecked) {
-         dataTheme.set('dark');
-         localStorage?.setItem('data-theme', 'dark');
-         document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-         dataTheme.set('light');
-         localStorage?.setItem('data-theme', 'light');
-         document.documentElement.setAttribute('data-theme', 'light');
-      }
-   }
-   onMount(() => {
-      if ($dataTheme === 'dark') {
-         isChecked = true;
-         localStorage?.setItem('data-theme', 'dark');
-      } else {
-         isChecked = false;
-         localStorage?.setItem('data-theme', 'light');
-      }
-      setCurrentTheme();
-   });
+import { dataTheme } from "@store/DataStore";
+import { onMount } from "svelte";
+let isChecked = false;
+function setCurrentTheme() {
+	if (isChecked) {
+		dataTheme.set("dark");
+		localStorage?.setItem("data-theme", "dark");
+		document.documentElement.setAttribute("data-theme", "dark");
+	} else {
+		dataTheme.set("light");
+		localStorage?.setItem("data-theme", "light");
+		document.documentElement.setAttribute("data-theme", "light");
+	}
+}
+onMount(() => {
+	if ($dataTheme === "dark") {
+		isChecked = true;
+		localStorage?.setItem("data-theme", "dark");
+	} else {
+		isChecked = false;
+		localStorage?.setItem("data-theme", "light");
+	}
+	setCurrentTheme();
+});
 </script>
 
 <label aria-label="DarkSwitchLable" class="swap swap-rotate h-full w-12">

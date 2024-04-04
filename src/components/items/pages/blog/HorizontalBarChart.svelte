@@ -1,47 +1,55 @@
 <script>
-   export let chartTitle;
-   export let dataArr;
-   export let arrName;
-   export let chartNote;
-   import * as d3 from 'd3';
-   import { onMount } from 'svelte';
+export let chartTitle;
+export let dataArr;
+export let arrName;
+export let chartNote;
+import * as d3 from "d3";
+import { onMount } from "svelte";
 
-   let chartBox;
-   let boxHeight = 300;
-   let boxWidth = 300;
-   let titleHeight = 40;
-   let descHeight = 20;
-   let chartHeight = 100;
-   let chartWidth = 100;
-   let padding = 10;
-   let styles;
-   let gx;
-   let gy;
-   let gxi;
+let chartBox;
+let boxHeight = 300;
+let boxWidth = 300;
+let titleHeight = 40;
+let descHeight = 20;
+let chartHeight = 100;
+let chartWidth = 100;
+let padding = 10;
+let styles;
+let gx;
+let gy;
+let gxi;
 
-   onMount(() => {
-      chartBox = document.querySelector('.chartBox');
-      boxHeight = chartBox.clientHeight;
-      boxWidth = chartBox.offsetWidth;
-      descHeight = document.querySelector('.desc').clientHeight;
-      titleHeight = document.querySelector('#chartTitle').clientHeight;
-      styles = window.getComputedStyle(chartBox);
-      padding = parseFloat(styles.padding);
-      chartHeight = boxHeight - titleHeight - descHeight - padding * 4;
-      chartWidth = boxWidth - padding * 4;
-      let svg = d3.select('#chart').select('svg');
-      const xScale = d3.scaleLinear([0, d3.max(dataArr, (d) => d)], [0, chartWidth - padding * 2]);
-      const yScale = d3.scaleLinear().range([0, chartHeight - padding * 2]);
-      d3.select(gxi)
-         .call(d3.axisBottom(xScale).tickSizeInner(-chartHeight + padding * 2))
-         .selectAll('g')
-         .selectAll('text')
-         .remove();
-      d3.select(gxi).selectAll('line').attr('class', 'stroke-gray-300 dark:opacity-50');
-      d3.select(gx).call(d3.axisBottom(xScale).ticks(6));
-      d3.select(gy).call(d3.axisLeft(yScale).ticks(0));
-   });
-   $: x = d3.scaleLinear([0, d3.max(dataArr, (d) => d)], [0, chartWidth - padding * 2]);
+onMount(() => {
+	chartBox = document.querySelector(".chartBox");
+	boxHeight = chartBox.clientHeight;
+	boxWidth = chartBox.offsetWidth;
+	descHeight = document.querySelector(".desc").clientHeight;
+	titleHeight = document.querySelector("#chartTitle").clientHeight;
+	styles = window.getComputedStyle(chartBox);
+	padding = Number.parseFloat(styles.padding);
+	chartHeight = boxHeight - titleHeight - descHeight - padding * 4;
+	chartWidth = boxWidth - padding * 4;
+	const svg = d3.select("#chart").select("svg");
+	const xScale = d3.scaleLinear(
+		[0, d3.max(dataArr, (d) => d)],
+		[0, chartWidth - padding * 2],
+	);
+	const yScale = d3.scaleLinear().range([0, chartHeight - padding * 2]);
+	d3.select(gxi)
+		.call(d3.axisBottom(xScale).tickSizeInner(-chartHeight + padding * 2))
+		.selectAll("g")
+		.selectAll("text")
+		.remove();
+	d3.select(gxi)
+		.selectAll("line")
+		.attr("class", "stroke-gray-300 dark:opacity-50");
+	d3.select(gx).call(d3.axisBottom(xScale).ticks(6));
+	d3.select(gy).call(d3.axisLeft(yScale).ticks(0));
+});
+$: x = d3.scaleLinear(
+	[0, d3.max(dataArr, (d) => d)],
+	[0, chartWidth - padding * 2],
+);
 </script>
 
 <div

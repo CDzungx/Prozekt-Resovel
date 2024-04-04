@@ -1,21 +1,21 @@
 <script>
-   import { onMount } from 'svelte';
-   import '@fontsource-variable/montserrat';
+import "@fontsource-variable/montserrat";
+import { onMount } from "svelte";
 
-   let isEnglish = true;
+let isEnglish = true;
 
-   onMount(() => {
-      isEnglish = !window.location.href.includes('/vi');
-   });
+onMount(() => {
+	isEnglish = !window.location.href.includes("/vi");
+});
 
-   function changeLanguage(lang) {
-      isEnglish = lang === 'en';
-      if (isEnglish) {
-         window.location.href = window.location.href.replace('/vi', '/en');
-      } else {
-         window.location.href = window.location.href.replace('/en', '/vi');
-      }
-   }
+function changeLanguage(lang) {
+	isEnglish = lang === "en";
+	if (isEnglish) {
+		window.location.href = window.location.href.replace("/vi", "/en");
+	} else {
+		window.location.href = window.location.href.replace("/en", "/vi");
+	}
+}
 </script>
 
 <div class="mx-1 flex flex-row justify-around rounded-md bg-white p-1 px-2 font-monts dark:bg-zinc-700">

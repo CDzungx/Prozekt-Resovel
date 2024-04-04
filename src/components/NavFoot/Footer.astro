@@ -1,10 +1,10 @@
 ---
-import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
-import { version } from '../../../package.json';
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { version } from "../../../package.json";
 const link = `https://github.com/CDzungx/Prozekt-Resovel/wiki/v${version}`;
-import { LicenseTranslate } from '@components/NavFoot/AstroTranslate';
-import SvelteDebug from '@components/NavFoot/SvelteDebug.svelte';
+import { LicenseTranslate } from "@components/NavFoot/AstroTranslate";
+import SvelteDebug from "@components/NavFoot/SvelteDebug.svelte";
 ---
 
 <footer
@@ -16,7 +16,7 @@ import SvelteDebug from '@components/NavFoot/SvelteDebug.svelte';
                ><label class="badge indicator-item badge-secondary cursor-pointer" for="modalButton">v{version}</label
                ></a
             >
-             2023
+            2023
          </span><span class="hidden font-medium lg:inline-block">© CDzungx&nbsp;</span>|
          <a
             class="font-semibold"

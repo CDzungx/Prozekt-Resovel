@@ -1,17 +1,17 @@
 ---
-import Footer from '@components/NavFoot/Footer.astro';
-import Navbar from '@components/NavFoot/Navbar.astro';
-import Layout from '@layouts/MainLayout.astro';
-import SVNLanding from '@components/items/pages/vietnam/landing/SVNLanding.svelte';
-import AnimatedStartBtn from '@components/items/pages/vietnam/landing/AnimatedStartBtn';
-import '@fontsource/lobster';
-import '@fontsource/paytone-one';
-import 'animate.css/animate.min.css';
+import Footer from "@components/NavFoot/Footer.astro";
+import Navbar from "@components/NavFoot/Navbar.astro";
+import AnimatedStartBtn from "@components/items/pages/vietnam/landing/AnimatedStartBtn";
+import SVNLanding from "@components/items/pages/vietnam/landing/SVNLanding.svelte";
+import "@fontsource/lobster";
+import "@fontsource/paytone-one";
+import Layout from "@layouts/MainLayout.astro";
+import "animate.css/animate.min.css";
 ---
 
 <Layout title="Prozekt Resovel" transition:name="vnindex" transition:animate="slide">
    <Navbar />
-   <main class="m-auto p-8" transition:name="vietnamtransition">
+   <main class="m-auto p-8">
       <div class="content-center items-center space-y-4">
          <SVNLanding client:load />
          <br />
@@ -30,3 +30,4 @@ import 'animate.css/animate.min.css';
       background-repeat: no-repeat;
    }
 </style>
+@components/items/legacy/landing/AnimatedStartBtn

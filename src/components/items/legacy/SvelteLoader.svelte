@@ -1,17 +1,17 @@
 <script>
-   import { onMount } from 'svelte';
-   import { fade } from 'svelte/transition';
+import { onMount } from "svelte";
+import { fade } from "svelte/transition";
 
-   let showLoader = true;
-   let cleanup = null;
+let showLoader = true;
+let cleanup = null;
 
-   onMount(() => {
-      const timeout = setTimeout(() => {
-         showLoader = false;
-      });
+onMount(() => {
+	const timeout = setTimeout(() => {
+		showLoader = false;
+	});
 
-      cleanup = () => clearTimeout(timeout);
-   });
+	cleanup = () => clearTimeout(timeout);
+});
 </script>
 
 {#if showLoader}

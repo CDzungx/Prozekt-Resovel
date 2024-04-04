@@ -1,6 +1,6 @@
 <script>
-   import { dataTheme } from '@store/DataStore';
-   import { locale } from '@store/i18n';
+import { dataTheme } from "@store/DataStore";
+import { locale } from "@store/i18n";
 </script>
 
 <dialog id="debugModal" class="modal">

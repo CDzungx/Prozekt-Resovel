@@ -1,17 +1,17 @@
 <script>
-   import Icon from '@iconify/svelte';
-   import { onMount } from 'svelte';
-   import { setting } from '@store/i18n';
-   let checked = setting === 'en';
-   function handleChange(event) {
-      setting.set(event.target.checked ? 'vi' : 'en');
-   }
-   onMount(() => {
-      const lang = localStorage?.getItem('locale') || 'en';
-      if (lang === 'vi') {
-         checked = true;
-      }
-   });
+import Icon from "@iconify/svelte";
+import { setting } from "@store/i18n";
+import { onMount } from "svelte";
+let checked = setting === "en";
+function handleChange(event) {
+	setting.set(event.target.checked ? "vi" : "en");
+}
+onMount(() => {
+	const lang = localStorage?.getItem("locale") || "en";
+	if (lang === "vi") {
+		checked = true;
+	}
+});
 </script>
 
 <label class="swap swap-flip">

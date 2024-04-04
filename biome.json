@@ -1,0 +1,23 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"organizeImports": {
+		"enabled": true,
+		"ignore": ["node_modules", "src/components/items/legacy/*"]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": true,
+		"ignore": ["node_modules", "src/components/items/legacy/*"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"javascript": {
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	}
+}
