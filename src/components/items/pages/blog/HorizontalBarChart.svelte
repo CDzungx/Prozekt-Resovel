@@ -46,6 +46,7 @@ onMount(() => {
 	d3.select(gx).call(d3.axisBottom(xScale).ticks(6));
 	d3.select(gy).call(d3.axisLeft(yScale).ticks(0));
 });
+// biome-ignore lint/suspicious/noConfusingLabels: <explanation>
 $: x = d3.scaleLinear(
 	[0, d3.max(dataArr, (d) => d)],
 	[0, chartWidth - padding * 2],

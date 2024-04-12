@@ -9,9 +9,9 @@ const Question = defineTable({
 
 const Answer = defineTable({
 	columns: {
-		id: column.number({ references: () => Question.columns.id }),
-		value: column.number(),
 		time: column.date(),
+		value: column.json(),
+		comment: column.number(),
 	},
 });
 
@@ -20,7 +20,6 @@ const BlogPostStat = defineTable({
 		id: column.text(),
 		view: column.number(),
 		like: column.number(),
-		share: column.number(),
 	},
 });
 

@@ -125,26 +125,42 @@ const SolidCountdown = () => {
 										{countdownValue().days >= 100 ? (
 											countdownValue().days
 										) : (
-											<span style={{ "--value": countdownValue().days }} />
+											<span
+												style={{
+													"--value": countdownValue().days,
+												}}
+											/>
 										)}
 									</span>
 									<span>{tcd().day}</span>
 								</div>
 								<div class="flex flex-col">
 									<span class="countdown justify-center font-mono text-4xl md:text-5xl">
-										<span style={{ "--value": countdownValue().hours }} />
+										<span
+											style={{
+												"--value": countdownValue().hours,
+											}}
+										/>
 									</span>
 									<span>{tcd().hour}</span>
 								</div>
 								<div class="flex flex-col">
 									<span class="countdown justify-center font-mono text-4xl md:text-5xl">
-										<span style={{ "--value": countdownValue().minutes }} />
+										<span
+											style={{
+												"--value": countdownValue().minutes,
+											}}
+										/>
 									</span>
 									<span>{tcd().min}</span>
 								</div>
 								<div class="flex flex-col">
 									<span class="countdown justify-center font-mono text-4xl md:text-5xl">
-										<span style={{ "--value": countdownValue().seconds }} />
+										<span
+											style={{
+												"--value": countdownValue().seconds,
+											}}
+										/>
 									</span>
 									<span>{tcd().sec}</span>
 								</div>

@@ -1,5 +1,3 @@
-// /** @jsxImportSource react */
-
 // import { useStore } from "@nanostores/react";
 // import { hasClickedStartButton } from "@store/DataStore";
 // import { NavFootContent } from "@store/translations/en";
@@ -24,7 +22,7 @@
 // 				<Client>
 // 					<div
 // 						id="landingButton"
-// 						className="mt-6 flex h-[70px] items-center justify-center font-paytone transition-all duration-500 "
+// 						className="invisible mt-6 flex h-[70px] items-center justify-center font-paytone transition-all duration-500 "
 // 					>
 // 						<motion.div
 // 							whileHover={{ scale: 1.3 }}
@@ -42,7 +40,6 @@
 // 							</span>
 // 							<div className="hidden flex-auto scale-0 opacity-0 transition-transform duration-[400ms] ease-in-out group-hover:h-14 group-hover:w-14 group-hover:scale-100 group-hover:opacity-100 md:flex">
 // 								<svg
-// 									xlinkTitle="Start"
 // 									xmlns="http://www.w3.org/2000/svg"
 // 									className="h-0 w-0 group-hover:ml-2 group-hover:h-full group-hover:w-full"
 // 									viewBox="0 0 256 256"

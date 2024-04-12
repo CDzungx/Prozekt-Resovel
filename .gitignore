@@ -24,3 +24,4 @@ pnpm-debug.log*
 .vercel
 .vscode
 astro_tmp_pages_*
+.idea

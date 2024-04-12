@@ -19,6 +19,8 @@ module.exports = {
 				verdana: ["Verdana", "sans-serif"],
 				times: ["Times New Roman", "serif"],
 				monts: ["Montserrat Variable", "sans-serif"],
+				rowdies: ["Rowdies", "system-ui"],
+				kanit: ["Kanit", "sans-serif"],
 			},
 
 			typography: {

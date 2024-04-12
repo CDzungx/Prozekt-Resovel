@@ -1,3 +1,5 @@
+import { resolve } from "node:path";
+import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -5,11 +7,13 @@ import solidJs from "@astrojs/solid-js";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
-import Compress from "astro-compress";
+import Compress from "@playform/compress";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
-import db from "@astrojs/db";
+
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 // https://astro.build/config
 export default defineConfig({
