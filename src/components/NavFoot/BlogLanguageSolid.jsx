@@ -10,9 +10,7 @@ const BlogLanguageSolid = () => {
 		if (!window.location.href.includes("/vi") && blogIsEnglish() === false) {
 			window.location.href = window.location.href.replace("/en", "/vi");
 		}
-		window.location.href.includes("/vi")
-			? $blogIsEnglish.set(false)
-			: $blogIsEnglish.set(true);
+		window.location.href.includes("/vi") ? $blogIsEnglish.set(false) : $blogIsEnglish.set(true);
 		console.log(blogIsEnglish());
 	});
 

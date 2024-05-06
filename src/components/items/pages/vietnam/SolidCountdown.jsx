@@ -30,9 +30,7 @@ function getCountdownValue() {
 
 	const distance = targetDate - currentDate;
 	const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	const hours = Math.floor(
-		(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-	);
+	const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 	const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 	const countForDate = targetDate.getDate();
@@ -80,9 +78,7 @@ const SolidCountdown = () => {
 						<figure class="max-w-xs md:mx-0 md:max-w-sm lg:max-w-xs">
 							<img
 								class="h-fit w-fit rounded-t-2xl object-cover lg:aspect-square lg:rounded-l-2xl lg:rounded-tr-none"
-								src={
-									countdownValue().countForDate === 30 ? gpflag.src : vnflag.src
-								}
+								src={countdownValue().countForDate === 30 ? gpflag.src : vnflag.src}
 								alt="Viet Nam"
 							/>
 						</figure>
@@ -96,9 +92,7 @@ const SolidCountdown = () => {
 									rel="noreferrer"
 								>
 									<span>
-										{countdownValue().countForDate === 30
-											? tcd().thongnhat
-											: tcd().quockhanh}
+										{countdownValue().countForDate === 30 ? tcd().thongnhat : tcd().quockhanh}
 									</span>
 									<svg
 										class="absolute right-0 top-0 hidden opacity-0 transition-opacity duration-200 group-hover:opacity-80 md:right-7 md:flex lg:-right-4 "
@@ -112,10 +106,7 @@ const SolidCountdown = () => {
 											fill="currentColor"
 											d="M3 1v12h12V1H3zm11 11H4V2h10v10zM2 14V3.5l-1-1V15h12.5l-1-1H2z"
 										/>
-										<path
-											fill="currentColor"
-											d="M5.5 4L8 6.5l-3 3L6.5 11l3-3l2.5 2.5V4z"
-										/>
+										<path fill="currentColor" d="M5.5 4L8 6.5l-3 3L6.5 11l3-3l2.5 2.5V4z" />
 									</svg>
 								</a>
 							</div>

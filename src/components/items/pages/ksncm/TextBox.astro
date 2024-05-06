@@ -1,0 +1,10 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div
+    class="bg-warning/20 border-2 border-base-content/30 rounded w-full lg:w-7/12 py-3 px-4 shadow-md *:text-left">
+    <h1 class="text-xl font-bold font-kanit text-center">{title}</h1>
+    <hr class="border-base-content/50 w-4/6 pt-1 pb-2" />
+    <p class="text-base-content/80 text-center">{content}</p>
+</div>

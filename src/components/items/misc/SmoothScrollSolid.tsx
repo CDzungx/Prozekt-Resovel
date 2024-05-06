@@ -15,16 +15,12 @@ const SmoothScrollSolid = () => {
 		}
 		requestAnimationFrame(raf.bind(window));
 
-		const anchors =
-			document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
+		const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
 		for (const anchor of anchors) {
-			anchor.addEventListener(
-				"click",
-				function (this: HTMLAnchorElement, e: Event) {
-					e.preventDefault();
-					lenis.scrollTo(this.getAttribute("href"), { offset: -100 });
-				},
-			);
+			anchor.addEventListener("click", function (this: HTMLAnchorElement, e: Event) {
+				e.preventDefault();
+				lenis.scrollTo(this.getAttribute("href"), { offset: -100 });
+			});
 		}
 	});
 };

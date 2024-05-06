@@ -12,9 +12,6 @@ import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
-const rootDir = new URL(".", import.meta.url).pathname;
-const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
-
 // https://astro.build/config
 export default defineConfig({
 	site: "https://cdzungx.id.vn/",
@@ -31,13 +28,7 @@ export default defineConfig({
 		tailwind(),
 		icon({
 			include: {
-				mdi: [
-					"github",
-					"arrow-left-bold-outline",
-					"home-outline",
-					"like-outline",
-					"share-outline",
-				],
+				mdi: ["github", "arrow-left-bold-outline", "home-outline", "like-outline", "share-outline"],
 				ic: ["outline-discord", "baseline-privacy-tip"],
 				ph: ["code-fill", "eye-bold"],
 				emojione: ["flag-for-united-kingdom", "flag-for-vietnam"],

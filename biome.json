@@ -2,37 +2,20 @@
 	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
 	"organizeImports": {
 		"enabled": true,
-		"ignore": [
-			"node_modules",
-			"src/components/items/legacy/",
-			".vercel",
-			".idea",
-			".astro"
-		]
+		"ignore": ["node_modules", "src/components/items/legacy/", ".vercel", ".idea", ".astro"]
 	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": true,
-		"ignore": [
-			"node_modules",
-			"src/components/items/legacy/",
-			".vercel",
-			".idea",
-			".astro"
-		]
+		"lineWidth": 100,
+		"ignore": ["node_modules", "src/components/items/legacy/", ".vercel", ".idea", ".astro"]
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		},
-		"ignore": [
-			"node_modules",
-			"src/components/items/legacy/",
-			".vercel",
-			".idea",
-			".astro"
-		]
+		"ignore": ["node_modules", "src/components/items/legacy/", ".vercel", ".idea", ".astro"]
 	},
 	"javascript": {
 		"parser": {

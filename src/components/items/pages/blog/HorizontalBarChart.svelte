@@ -30,27 +30,18 @@ onMount(() => {
 	chartHeight = boxHeight - titleHeight - descHeight - padding * 4;
 	chartWidth = boxWidth - padding * 4;
 	const svg = d3.select("#chart").select("svg");
-	const xScale = d3.scaleLinear(
-		[0, d3.max(dataArr, (d) => d)],
-		[0, chartWidth - padding * 2],
-	);
+	const xScale = d3.scaleLinear([0, d3.max(dataArr, (d) => d)], [0, chartWidth - padding * 2]);
 	const yScale = d3.scaleLinear().range([0, chartHeight - padding * 2]);
 	d3.select(gxi)
 		.call(d3.axisBottom(xScale).tickSizeInner(-chartHeight + padding * 2))
 		.selectAll("g")
 		.selectAll("text")
 		.remove();
-	d3.select(gxi)
-		.selectAll("line")
-		.attr("class", "stroke-gray-300 dark:opacity-50");
+	d3.select(gxi).selectAll("line").attr("class", "stroke-gray-300 dark:opacity-50");
 	d3.select(gx).call(d3.axisBottom(xScale).ticks(6));
 	d3.select(gy).call(d3.axisLeft(yScale).ticks(0));
 });
-// biome-ignore lint/suspicious/noConfusingLabels: <explanation>
-$: x = d3.scaleLinear(
-	[0, d3.max(dataArr, (d) => d)],
-	[0, chartWidth - padding * 2],
-);
+$: x = d3.scaleLinear([0, d3.max(dataArr, (d) => d)], [0, chartWidth - padding * 2]);
 </script>
 
 <div

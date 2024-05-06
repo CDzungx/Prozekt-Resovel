@@ -17,10 +17,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 
-const allPosts = await getCollection(
-	"blog",
-	({ data }) => data.language === lang,
-);
+const allPosts = await getCollection("blog", ({ data }) => data.language === lang);
 ---
 
 <MainLayout title="Blog">
